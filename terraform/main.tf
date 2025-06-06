@@ -99,6 +99,65 @@ locals {
     "images/nrprint-home-slideshow/product-memory2.jpg" = { path = "${path.module}/../site/images/nrprint-home-slideshow/product-memory2.jpg", type = "image/jpeg" },
     "images/nrprint-home-slideshow/another-one.png"     = { path = "${path.module}/../site/images/nrprint-home-slideshow/another-one.png", type = "image/png" },
     "images/nrprint-home-slideshow/tshirt-sample1.jpg"  = { path = "${path.module}/../site/images/nrprint-home-slideshow/tshirt-sample1.jpg", type = "image/png" }
+    # T-Shirts
+    "images/portfolio/tshirt-1.jpg" = { path = "${path.module}/../site/images/portfolio/tshirt-1.jpg", type = "image/jpeg" }
+    "images/portfolio/tshirt-2.jpg" = { path = "${path.module}/../site/images/portfolio/tshirt-2.jpg", type = "image/jpeg" }
+    "images/portfolio/tshirt-3.jpg" = { path = "${path.module}/../site/images/portfolio/tshirt-3.jpg", type = "image/jpeg" }
+    "images/portfolio/tshirt-4.jpg" = { path = "${path.module}/../site/images/portfolio/tshirt-4.jpg", type = "image/jpeg" }
+    "images/portfolio/tshirt-5.jpg" = { path = "${path.module}/../site/images/portfolio/tshirt-5.jpg", type = "image/jpeg" }
+    "images/portfolio/tshirt-6.jpg" = { path = "${path.module}/../site/images/portfolio/tshirt-6.jpg", type = "image/jpeg" }
+    "images/portfolio/tshirt-7.jpg" = { path = "${path.module}/../site/images/portfolio/tshirt-7.jpg", type = "image/jpeg" }
+    "images/portfolio/tshirt-8.jpg" = { path = "${path.module}/../site/images/portfolio/tshirt-8.jpg", type = "image/jpeg" }
+
+    # Hoodies
+    "images/portfolio/hoodie-1.jpg" = { path = "${path.module}/../site/images/portfolio/hoodie-1.jpg", type = "image/jpeg" }
+    "images/portfolio/hoodie-2.jpg" = { path = "${path.module}/../site/images/portfolio/hoodie-2.jpg", type = "image/jpeg" }
+    "images/portfolio/hoodie-3.jpg" = { path = "${path.module}/../site/images/portfolio/hoodie-3.jpg", type = "image/jpeg" }
+    "images/portfolio/hoodie-4.jpg" = { path = "${path.module}/../site/images/portfolio/hoodie-4.jpg", type = "image/jpeg" }
+    "images/portfolio/hoodie-5.jpg" = { path = "${path.module}/../site/images/portfolio/hoodie-5.jpg", type = "image/jpeg" }
+    "images/portfolio/hoodie-6.jpg" = { path = "${path.module}/../site/images/portfolio/hoodie-6.jpg", type = "image/jpeg" }
+    "images/portfolio/hoodie-7.jpg" = { path = "${path.module}/../site/images/portfolio/hoodie-7.jpg", type = "image/jpeg" }
+    "images/portfolio/hoodie-8.jpg" = { path = "${path.module}/../site/images/portfolio/hoodie-8.jpg", type = "image/jpeg" }
+
+    # Hats
+    "images/portfolio/hat-1.jpg" = { path = "${path.module}/../site/images/portfolio/hat-1.jpg", type = "image/jpeg" }
+    "images/portfolio/hat-2.jpg" = { path = "${path.module}/../site/images/portfolio/hat-2.jpg", type = "image/jpeg" }
+    "images/portfolio/hat-3.jpg" = { path = "${path.module}/../site/images/portfolio/hat-3.jpg", type = "image/jpeg" }
+    "images/portfolio/hat-4.jpg" = { path = "${path.module}/../site/images/portfolio/hat-4.jpg", type = "image/jpeg" }
+    "images/portfolio/hat-5.jpg" = { path = "${path.module}/../site/images/portfolio/hat-5.jpg", type = "image/jpeg" }
+    "images/portfolio/hat-6.jpg" = { path = "${path.module}/../site/images/portfolio/hat-6.jpg", type = "image/jpeg" }
+    "images/portfolio/hat-7.jpg" = { path = "${path.module}/../site/images/portfolio/hat-7.jpg", type = "image/jpeg" }
+    "images/portfolio/hat-8.jpg" = { path = "${path.module}/../site/images/portfolio/hat-8.jpg", type = "image/jpeg" }
+
+    # Mugs
+    "images/portfolio/mug-1.jpg" = { path = "${path.module}/../site/images/portfolio/mug-1.jpg", type = "image/jpeg" }
+    "images/portfolio/mug-2.jpg" = { path = "${path.module}/../site/images/portfolio/mug-2.jpg", type = "image/jpeg" }
+    "images/portfolio/mug-3.jpg" = { path = "${path.module}/../site/images/portfolio/mug-3.jpg", type = "image/jpeg" }
+    "images/portfolio/mug-4.jpg" = { path = "${path.module}/../site/images/portfolio/mug-4.jpg", type = "image/jpeg" }
+    "images/portfolio/mug-5.jpg" = { path = "${path.module}/../site/images/portfolio/mug-5.jpg", type = "image/jpeg" }
+    "images/portfolio/mug-6.jpg" = { path = "${path.module}/../site/images/portfolio/mug-6.jpg", type = "image/jpeg" }
+    "images/portfolio/mug-7.jpg" = { path = "${path.module}/../site/images/portfolio/mug-7.jpg", type = "image/jpeg" }
+    "images/portfolio/mug-8.jpg" = { path = "${path.module}/../site/images/portfolio/mug-8.jpg", type = "image/jpeg" }
+
+    # Tumblers
+    "images/portfolio/tumbler-1.jpg" = { path = "${path.module}/../site/images/portfolio/tumbler-1.jpg", type = "image/jpeg" }
+    "images/portfolio/tumbler-2.jpg" = { path = "${path.module}/../site/images/portfolio/tumbler-2.jpg", type = "image/jpeg" }
+    "images/portfolio/tumbler-3.jpg" = { path = "${path.module}/../site/images/portfolio/tumbler-3.jpg", type = "image/jpeg" }
+    "images/portfolio/tumbler-4.jpg" = { path = "${path.module}/../site/images/portfolio/tumbler-4.jpg", type = "image/jpeg" }
+    "images/portfolio/tumbler-5.jpg" = { path = "${path.module}/../site/images/portfolio/tumbler-5.jpg", type = "image/jpeg" }
+    "images/portfolio/tumbler-6.jpg" = { path = "${path.module}/../site/images/portfolio/tumbler-6.jpg", type = "image/jpeg" }
+    "images/portfolio/tumbler-7.jpg" = { path = "${path.module}/../site/images/portfolio/tumbler-7.jpg", type = "image/jpeg" }
+    "images/portfolio/tumbler-8.jpg" = { path = "${path.module}/../site/images/portfolio/tumbler-8.jpg", type = "image/jpeg" }
+
+    # Tote Bags
+    "images/portfolio/tote-1.jpg" = { path = "${path.module}/../site/images/portfolio/tote-1.jpg", type = "image/jpeg" }
+    "images/portfolio/tote-2.jpg" = { path = "${path.module}/../site/images/portfolio/tote-2.jpg", type = "image/jpeg" }
+    "images/portfolio/tote-3.jpg" = { path = "${path.module}/../site/images/portfolio/tote-3.jpg", type = "image/jpeg" }
+    "images/portfolio/tote-4.jpg" = { path = "${path.module}/../site/images/portfolio/tote-4.jpg", type = "image/jpeg" }
+    "images/portfolio/tote-5.jpg" = { path = "${path.module}/../site/images/portfolio/tote-5.jpg", type = "image/jpeg" }
+    "images/portfolio/tote-6.jpg" = { path = "${path.module}/../site/images/portfolio/tote-6.jpg", type = "image/jpeg" }
+    "images/portfolio/tote-7.jpg" = { path = "${path.module}/../site/images/portfolio/tote-7.jpg", type = "image/jpeg" }
+    "images/portfolio/tote-8.jpg" = { path = "${path.module}/../site/images/portfolio/tote-8.jpg", type = "image/jpeg" }
   }
 }
 
