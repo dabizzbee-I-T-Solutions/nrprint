@@ -13,19 +13,6 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <!-- Facebook SDK - IMPORTANT: Configure this correctly -->
-    <div id="fb-root"></div>
-    <script async defer crossorigin="anonymous"
-        src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v19.0&appId=YOUR_FACEBOOK_APP_ID_IF_ANY&autoLogAppEvents=1"
-        nonce="YOUR_UNIQUE_NONCE_VALUE_HERE"></script>
-    <!--
-        Replace YOUR_FACEBOOK_APP_ID_IF_ANY with your Facebook App ID.
-        If you don't have one, you can try removing the &appId=... part,
-        but it's more reliable with an App ID.
-        Replace YOUR_UNIQUE_NONCE_VALUE_HERE with a random string if using CSP.
-    -->
-
     <header>
         <div class="container header-container">
             <a href="#" class="logo-link">
@@ -36,9 +23,9 @@
                 <ul>
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
-                    <li><a href="#services">Services</a></li>
+                    <li><a href="#services">Products</a></li>
                     <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#accomplishments">Milestones</a></li>
+                    <li><a href="#clients">Clients</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
@@ -68,122 +55,106 @@
                 </ul>
                 <p><strong>"Your ideas, We design!"</strong> — <em>"We value memories"</em></p>
             </div>
-            <p>Welcome to NRPrint! We started with a passion for bringing ideas to life through high-quality custom printing. We believe in creativity, quality, and amazing customer service. Whether it's a single custom gift or a bulk order for your event or company, we're here to make it happen.</p>
-            <p>Our mission is to provide exceptional print products that help our clients express themselves, promote their brands, and commemorate special moments.</p>
+            
+            <div class="philosophy-box">
+                <h3>Our Philosophy</h3>
+                <p>Welcome to NRPrint! We started with a passion for bringing ideas to life through high-quality custom printing. We believe in <strong>creativity, quality,</strong> and <strong>amazing customer service</strong>. Whether it's a single custom gift or a bulk order for your event or company, we're here to make it happen.</p>
+                <p class="mission-statement">Our mission is to provide exceptional print products that help our clients express themselves, promote their brands, and commemorate special moments.</p>
+            </div>
         </section>
 
         <section id="services" class="container content-section">
-            <h2>Our Services</h2>
-            <div class="service-grid">
-                <div class="service-item">
-                    <img src="images/tshirt-sample1.jpg" alt="Custom T-Shirt Printing Example">
-                    <h3>T-Shirt Printing</h3>
-                    <p>Vibrant, durable prints on a variety of t-shirt styles and colors. Perfect for events, teams, and personal expression. We offer screen printing and DTG.</p>
+            <h2>Our Products & Techniques</h2>
+            <div class="product-techniques-grid">
+                <div class="technique-card">
+                    <img src="images/tshirt-sample1.jpg" alt="Custom apparel printing">
+                    <h3>DTF, DTG & Vinyl Printing</h3>
+                    <p>Perfect for apparel and fabric goods, these methods offer vibrant colors and durable finishes for any design, from simple text to complex graphics.</p>
+                    <ul class="product-list">
+                        <li>T-Shirts</li>
+                        <li>Hoodies</li>
+                        <li>Hats & Caps</li>
+                        <li>Tote Bags</li>
+                    </ul>
                 </div>
-                <div class="service-item">
-                    <img src="images/mug-sample1.jpg" alt="Custom Mug Printing Example">
-                    <h3>Mug Printing</h3>
-                    <p>Personalized mugs make great gifts or promotional items. Dishwasher and microwave safe options available. Full-color sublimation for stunning results.</p>
-                </div>
-                <div class="service-item">
-                    <img src="images/cap-sample1.jpg" alt="Custom Cap Printing Example">
-                    <h3>Cap Printing</h3>
-                    <p>Stylish custom caps, hats, and beanies. Choose from high-quality printing or detailed embroidery for a premium look on various cap styles.</p>
+                <div class="technique-card">
+                    <img src="images/mug-sample1.jpg" alt="Custom sublimation printing on a mug">
+                    <h3>Sublimation Printing</h3>
+                    <p>Ideal for hard-surface items, sublimation embeds ink directly into the product for a permanent, full-color, photo-quality result that won't fade.</p>
+                    <ul class="product-list">
+                        <li>Mugs (Ceramic, Magic)</li>
+                        <li>Tumblers (Stainless Steel)</li>
+                        <li>Coasters & Plaques</li>
+                        <li>And more!</li>
+                    </ul>
                 </div>
             </div>
         </section>
 
         <section id="portfolio" class="container content-section">
             <h2>Our Work Showcase</h2>
-            <p>A glimpse of some of the awesome projects we've had the pleasure to work on. We take pride in every piece!</p>
-            <div class="portfolio-grid">
-                <img src="images/tshirt-sample2.jpg" alt="Portfolio T-shirt example">
-                <img src="images/mug-sample2.jpg" alt="Portfolio Mug example">
-                <img src="images/cap-sample2.jpg" alt="Portfolio Cap example">
-                <img src="images/tshirt-sample1.jpg" alt="Another T-shirt example in portfolio">
-            </div>
-        </section>
+            <div class="section-intro">
+    <h4>Crafted with Passion, Printed with Pride</h4>
+    <p>Explore a collection of our favorite projects. Every item tells a story, and we're proud to be a part of it.</p>
+</div>
+            
+            <!-- Filter Buttons will be generated here by JavaScript -->
+            <div class="portfolio-filters"></div>
 
-        <section id="facebook-gallery" class="container content-section">
-            <h2>Follow Us on Facebook</h2>
-            <p>See our latest creations, customer features, and get inspiration!</p>
-            <div class="facebook-embed-container">
-            <div class="fb-page"
-                 data-href="https://www.facebook.com/Nrprinthk"
-                 data-tabs="photos"
-                 data-width=""  
-                 data-height="500" 
-                 data-small-header="false"
-                 data-adapt-container-width="true"
-                 data-hide-cover="false"
-                 data-show-facepile="true">
-                <blockquote cite="https://www.facebook.com/Nrprinthk"
-                    class="fb-xfbml-parse-ignore">
-                <a href="https://www.facebook.com/Nrprinthk">NRPrint Hong Kong</a>
-                </blockquote>
-            </div>
-            </div>
+            <!-- Portfolio Grid will be generated here by JavaScript -->
+            <div class="portfolio-grid"></div>
         </section>
-
-        <section id="accomplishments" class="container content-section">
-            <h2>Our Journey & Milestones</h2>
-            <p>We're proud of what we've achieved! Click on each milestone to see more details.</p>
-            <div class="accordion-container">
-                <div class="accordion-item">
-                    <button class="accordion-header">
-                        Painting Our Town Proud
-                        <span class="accordion-icon">+</span>
-                    </button>
-                    <div class="accordion-content">
-                        <div class="accordion-content-inner">
-                            <p>We were thrilled to support <strong>5+ local community events</strong>! From lively festivals to school fundraisers and charity runs, our custom apparel helped boost their visibility and spread team spirit. Seeing our prints in action, making a difference, is what we love!</p>
-                            <img src="images/accomplishment-event-detail.jpg" alt="Custom apparel at a local community event">
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <button class="accordion-header">
-                        Fueling Local Dreams
-                        <span class="accordion-icon">+</span>
-                    </button>
-                    <div class="accordion-content">
-                        <div class="accordion-content-inner">
-                            <p>This year, we proudly partnered with <strong>10+ new local businesses</strong>. It's been an honor to help entrepreneurs and established companies bring their brand to life with custom staff uniforms, promotional merchandise, and unique corporate gifts.</p>
-                            <img src="images/accomplishment-business-collab.jpg" alt="Collaboration example with a local business merchandise">
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <button class="accordion-header">
-                        2000+ Ideas Brought to Life!
-                        <span class="accordion-icon">+</span>
-                    </button>
-                    <div class="accordion-content">
-                        <div class="accordion-content-inner">
-                            <p>Wow! A huge thank you to our amazing customers. We hit a fantastic milestone, printing over <strong>2,000 custom items</strong>. Each t-shirt, mug, and cap tells a unique story, and we're so grateful to be a part of yours.</p>
-                            <img src="images/accomplishment-volume.jpg" alt="Stack of various printed items like t-shirts and mugs">
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <button class="accordion-header">
-                        Color Explosion! Our New Mug Magic
-                        <span class="accordion-icon">+</span>
-                    </button>
-                    <div class="accordion-content">
-                        <div class="accordion-content-inner">
-                            <p>We've leveled up! We introduced <strong>full-color mug sublimation</strong>. This means more vibrant, detailed, and durable designs on your favorite drinkware, opening up a universe of creative possibilities for personalized and promotional mugs.</p>
-                            <img src="images/accomplishment-mug-tech.jpg" alt="Close-up of a vibrant full-color sublimation printed mug">
-                        </div>
-                    </div>
-                </div>
+        
+        <section id="clients" class="container content-section">
+            <h2>Community Collaborations</h2>
+            <div class="section-intro">
+    <h4>Building Community, One Print at a Time</h4>
+    <p>We're honored to support the amazing businesses and organizations that make our community thrive.</p>
+</div>
+            <div class="client-grid">
+                <!-- Client logos remain here as they are unique -->
+                <a href="https://www.facebook.com/profile.php?id=100064071431464" target="_blank" class="client-item">
+                    <img src="https://scontent.fmnl7-2.fna.fbcdn.net/v/t39.30808-6/294104464_424517289693982_7144073742088312788_n.png?_nc_cat=106&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeF3zwMKHGJn0m_Q2siA15RFcyRsBnGMjgJzJGwGcYyOAked0L4YXi8Qyj6OGAJfVgxoIZDey3tONmjSdub6lvPM&_nc_ohc=BJxauOMiT-QQ7kNvwGLN4Af&_nc_oc=AdnIQXmEdRHwY1TLKgXiu3_Wj1DrrbYzTR7WEjlIGuOvw9G67oDcB8FrNeo5G87fntQ&_nc_zt=23&_nc_ht=scontent.fmnl7-2.fna&_nc_gid=agiVADz_5GIsduSG2nkZNA&oh=00_AfMwyPIno5D136kxV6pEzCqXYt-GwsQHGsCI2vMBblgfJA&oe=6848636E" alt="Gigil corner Logo">
+                    <span>Gigil corner</span>
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=100068343613409" target="_blank" class="client-item">
+                    <img src="https://scontent.fmnl7-1.fna.fbcdn.net/v/t39.30808-6/300208273_366113652343419_3448227704688918671_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeEQDNvQpjoQPFPlqBk-H-HPt9GAkpZxmne30YCSlnGad_xSoPcw3643YGFnuQd_G2EAyht7sPbHaCD04PgnMUjN&_nc_ohc=ZAfy8dK7Ac4Q7kNvwGXCa1e&_nc_oc=AdlJXNnGpDGW5bYHf_C6lziQhYg0rhbrF02Ewx0sv6TUgeHOKqay724cVT2ZjwjaQhM&_nc_zt=23&_nc_ht=scontent.fmnl7-1.fna&_nc_gid=j6wD_Tu90f2kFAjfbkz_Mg&oh=00_AfP29iqlDT1fgN7UlAnNZSbVDsmioDxwYZMorQc9XL-XLQ&oe=68482F51" alt="Mami & Me Logo">
+                    <span>Mami & Me</span>
+                </a>
+                <a href="https://www.facebook.com/wordfortheworldhongkong" target="_blank" class="client-item">
+                    <img src="https://scontent.fmnl7-1.fna.fbcdn.net/v/t39.30808-6/309060619_457890556374134_1148005992943430300_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeHiY9jEOW4j-X6idH8v5RzFBS5rU9aeNQUFLmtT1p41BaxwLtGpbGMNvb8sn7E2eSxe6w-BtELxSano0iFgkreg&_nc_ohc=G7AMlbTeBQEQ7kNvwGbxDFh&_nc_oc=AdkEXsq6DdGnlFXZdXFmKTK7Wow6HaRoMJRFHSYIGI18mdnl_gjHMs0e29-0YDoxZgU&_nc_zt=23&_nc_ht=scontent.fmnl7-1.fna&_nc_gid=OMU61koxywzh0vxK_crFYA&oh=00_AfMVlt2git61X7RXQA1T5nRBzlsud6dwhzwlrgHEMKlXmA&oe=68485C24" alt="Word for the World - Hong Kong Logo">
+                    <span>Word for the World HK</span>
+                </a>
+                <a href="https://www.facebook.com/kalelivenrocks" target="_blank" class="client-item">
+                    <img src="https://scontent.fmnl7-1.fna.fbcdn.net/v/t39.30808-6/300514412_493519252778534_8392757568385591665_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeG9efQUQNjbDwtOkkKdjAJXgQpiCCMzgW6BCmIIIzOBbj6cCv-WSPlClb6J-kcD3ImFBZTjFFVZzcMf32QgCENW&_nc_ohc=lJUIsFuktuAQ7kNvwEx63OD&_nc_oc=AdlGjxzOiBfF7vs2XKA5RHKkFfYDRQmu_Mz3JFFg1JKwNKJLH4UA6uWo_OrEwwgqDUc&_nc_zt=23&_nc_ht=scontent.fmnl7-1.fna&_nc_gid=djzh_7sWs9Qf-p5AdXH52w&oh=00_AfOfqgIFRoIPPv8ofcA0Q_RVPTLtaB8SjbIyTkPfLQyKZg&oe=68484967" alt="Kale Live N Rocks Logo">
+                    <span>Kale Live N Rocks</span>
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=100063748072623" target="_blank" class="client-item">
+                    <img src="https://scontent.fmnl7-2.fna.fbcdn.net/v/t39.30808-6/468725224_1108616681273257_6922107594808133081_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeFaaSXTHmgSJkOmrSKSHfA2zIcP6mjq2gvMhw_qaOraC6QQesDyUkCzUKnZcZGI1Tu5f0Tw0zEcwTIY8hN8z8Hh&_nc_ohc=6hYwzyL_Hk0Q7kNvwHeJPtV&_nc_oc=AdnM4ZR-enpLHz1z1aupBvTgimZJf4CtkPR6htnRBpkWuA9QvRWtmrWtFm7D2wB_5KM&_nc_zt=23&_nc_ht=scontent.fmnl7-2.fna&_nc_gid=oYhDIRzlJM7emDK5Yo9ibA&oh=00_AfPoBmbt5YHPfF93SZv7Bd0zQvv23of1J06kLX5bGxbrog&oe=68485D4A" alt="La Chi Gaf Logo">
+                    <span>La Chi Gaf</span>
+                </a>
+                <a href="https://www.facebook.com/bar109" target="_blank" class="client-item">
+                    <img src="https://scontent.fmnl7-1.fna.fbcdn.net/v/t39.30808-6/307869123_514975153968974_619227207717057278_n.png?_nc_cat=108&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeFUTzZ0VXvrbV0bXMMxlPK4PdHcSjW0YhU90dxKNbRiFY5dgJMf5PZwfIeZgwDFzIhLcYLdlqZ513TqJOf_kzM-&_nc_ohc=CoqHthc8Ha0Q7kNvwHp6aAT&_nc_oc=AdmR9YSjoZrn1J3i4KEVQc50k50BTlnIv_tYx7b530XgJNkFO0i5sZ333WT2FfFX2Bs&_nc_zt=23&_nc_ht=scontent.fmnl7-1.fna&_nc_gid=JCCF4tBLPaPgKp5O7qk3qw&oh=00_AfN9jYuQIVNF6i2adLZ89W_-UKfuOMgxwqzAh4n-6TX_hg&oe=6848332A" alt="Bar 109 Logo">
+                    <span>Bar 109</span>
+                </a>
+                <a href="https://www.facebook.com/joebananas.hk" target="_blank" class="client-item">
+                    <img src="https://scontent.fmnl7-1.fna.fbcdn.net/v/t39.30808-6/359792587_683964663747946_6338915122039467238_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeF6VhZDFBY8W7ujaDXTo2qfFbKcwni3YoYVspzCeLdihpihgQrVqjTdwEk6Dmidqwm6pASbzrE0jNuyAV28R9g6&_nc_ohc=OK_nn_Ti504Q7kNvwFQA_x8&_nc_oc=Adm-ZtmT2OZLqGGW1cJz1vGdqxoPGfa4JJpesPSvc5xnZvG_qowVskvL8SMpCYF6we4&_nc_zt=23&_nc_ht=scontent.fmnl7-1.fna&_nc_gid=Q7kYkFKmjDfwGmAqlj1s9A&oh=00_AfMlo-37GY0AwDwYFhEUn_0yo__NFlmFhlplasA87BLqQQ&oe=6848444F" alt="Joe Bananas Logo">
+                    <span>Joe Bananas</span>
+                </a>
+                <a href="https://www.facebook.com/BRKLYNPIZZACO" target="_blank" class="client-item">
+                    <img src="https://scontent.fmnl7-1.fna.fbcdn.net/v/t39.30808-6/327118036_497914885856930_1431506675445113244_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeHCBocxobDWuZAd6vQqT8iJbG-nAbuzV29sb6cBu7NXb8vn-Zrl4cJEtmxMPiI1xLqKEy5Sp8reg_U4GZNVmzoU&_nc_ohc=7i-J_KbZI6gQ7kNvwFC0zIM&_nc_oc=Adl8r9sZMHl2VGQDVY2lxXkzbgUZnidKsLRN1al2eBBNcag5gbtDp9ZaVHuHP-txTvc&_nc_zt=23&_nc_ht=scontent.fmnl7-1.fna&_nc_gid=17bCJ7Vmv08u3jS4F6HmCA&oh=00_AfPf9QQf0EZvyp4hwF4xuB0rmUAxGYqrkVpFmS6RlwOXxw&oe=68484358" alt="BRKLYN Pizzeria Logo">
+                    <span>BRKLYN Pizzeria</span>
+                </a>
             </div>
-            <p class="note">We're excited for what <span id="nextYear"></span> will bring!</p>
         </section>
 
         <section id="contact" class="container content-section">
             <h2>Get in Touch</h2>
-            <p>Ready to start your custom printing project? Have questions? We'd love to hear from you! Reach out today for a free quote or to discuss your ideas.</p>
+            <div class="section-intro">
+    <svg class="intro-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a5.5 5.5 0 0 0-4.52 8.84l-1.35 2.16a1 1 0 0 0 .87 1.5h9a1 1 0 0 0 .87-1.5l-1.35-2.16A5.5 5.5 0 0 0 12 2zm0 9a3.5 3.5 0 1 1 3.5-3.5A3.5 3.5 0 0 1 12 11zm-6.5 7h13a1 1 0 0 0 0-2h-13a1 1 0 0 0 0 2z"></path></svg>
+    <h4>Ready to Create Something Amazing?</h4>
+    <p>We'd love to hear from you! Reach out for a free, no-obligation quote and let's bring your project to life.</p>
+</div>
             <div class="contact-methods">
                 <div class="contact-form-container">
                     <h3>Send Us a Message</h3>
@@ -239,6 +210,11 @@
         </div>
     </footer>
 
-    <script src="slides.js"></script>
+    <!-- This can be either slides.js or your main script file -->
+    <script src="slides.js"></script> 
+    
+    <!-- Link to the NEW JavaScript file for the portfolio -->
+    <script src="app.js" defer></script>
+
 </body>
 </html>

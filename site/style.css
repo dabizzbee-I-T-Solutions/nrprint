@@ -1,4 +1,110 @@
-/* === GLOBAL RESETS & BASIC STYLES === */
+/* === Add these new rules to your existing style.css file === */
+
+/* === ABOUT SECTION - PHILOSOPHY BOX (NEW) === */
+.philosophy-box {
+    background-color: #FFFFFF;
+    border-left: 5px solid #AFD198;
+    /* Sage Green accent border */
+    padding: 25px 30px;
+    margin: 40px auto 0;
+    border-radius: 0 8px 8px 0;
+    box-shadow: 0 4px 15px rgba(219, 169, 121, 0.1);
+}
+
+.philosophy-box h3 {
+    color: #DBA979;
+    /* Warm Tan */
+    margin-top: 0;
+    margin-bottom: 1em;
+}
+
+.philosophy-box p {
+    font-size: 1.05em;
+    color: #5D4037;
+}
+
+.philosophy-box .mission-statement {
+    font-style: italic;
+    color: #DBA979;
+    /* Warm Tan for emphasis */
+    margin-top: 1.5em;
+    margin-bottom: 0;
+}
+
+
+/* === PORTFOLIO FILTERS AND UPDATED GRID (NEW) === */
+.portfolio-filters {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.filter-btn {
+    background-color: transparent;
+    border: 2px solid #ECCA9C;
+    /* Lighter Tan border */
+    color: #DBA979;
+    /* Warm Tan text */
+    padding: 8px 20px;
+    margin: 5px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9em;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+    background-color: #ECCA9C;
+    /* Lighter Tan background */
+    color: #5D4037;
+    /* Dark brown text */
+}
+
+.filter-btn.active {
+    background-color: #AFD198;
+    /* Sage Green for active */
+    border-color: #AFD198;
+    color: #FFFFFF;
+    /* White text */
+}
+
+/* Updated Portfolio Grid Item */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.portfolio-item {
+    display: block;
+    /* Ensures the item shows up */
+    text-decoration: none;
+    border-radius: 6px;
+    overflow: hidden;
+    /* Important for the image inside */
+}
+
+.portfolio-item img {
+    border-radius: 6px;
+    box-shadow: 0 3px 8px rgba(219, 169, 121, 0.1);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border: 1px solid #ECCA9C;
+}
+
+.portfolio-item:hover img {
+    transform: scale(1.05);
+    opacity: 0.85;
+}
+
+
+/* === You do not need to replace your whole CSS file. Just add these blocks. === */
+/* I'm providing the full CSS for completeness in case you prefer to replace it. */
+
+/* === FULL CSS FOR REFERENCE (includes the additions) === */
 * {
     margin: 0;
     padding: 0;
@@ -7,16 +113,16 @@
 
 html {
     scroll-behavior: smooth;
-}
+    scroll-padding-top: 90px; /* This is the magic line! */
+}a
 
 body {
     font-family: 'Helvetica Neue', Arial, sans-serif;
     line-height: 1.7;
-    color: #5D4037; /* Base text color */
-    background-color: #EBEFCF; /* Very Light Greenish Beige background */
+    color: #5D4037;
+    background-color: #EBEFCF;
 }
 
-/* Optional: Prevent body scroll when mobile nav is open */
 body.no-scroll {
     overflow: hidden;
 }
@@ -28,28 +134,38 @@ body.no-scroll {
     padding: 0 15px;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     margin-bottom: 0.7em;
-    color: #DBA979; /* Warm Tan for headings */
+    color: #DBA979;
     line-height: 1.3;
 }
 
-h1 { font-size: 2.4em; }
-h2 { font-size: 2em; }
-h3 { font-size: 1.5em; }
+h1 {
+    font-size: 2.4em;
+}
+
+h2 {
+    font-size: 2em;
+}
+
+h3 {
+    font-size: 1.5em;
+}
 
 p {
     margin-bottom: 1.2em;
 }
 
 a {
-    color: #AFD198; /* Soft Sage Green for links */
+    color: #AFD198;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 a:hover {
-    color: #97BF81; /* Darker Sage Green on hover */
+    color: #97BF81;
     text-decoration: underline;
 }
 
@@ -61,21 +177,21 @@ img {
 }
 
 ul {
-    list-style-position: inside; /* Or 'none' if you style them differently */
-    padding-left: 5px; /* Or 0 if you use custom markers */
+    list-style-position: inside;
+    padding-left: 5px;
 }
+
 ul li {
     margin-bottom: 0.5em;
 }
 
-/* === HEADER === */
 header {
     background-color: #FFFFFF;
     padding: 0.8em 0;
-    border-bottom: 2px solid #ECCA9C; /* Lighter Tan border */
+    border-bottom: 2px solid #ECCA9C;
     position: sticky;
     top: 0;
-    z-index: 1000; /* Important for stacking context, ensure mobile nav is higher */
+    z-index: 1000;
     box-shadow: 0 2px 5px rgba(219, 169, 121, 0.07);
 }
 
@@ -83,7 +199,7 @@ header .header-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: relative; /* Needed for absolute positioning of mobile nav if it's a child */
+    position: relative;
 }
 
 #logo {
@@ -101,30 +217,29 @@ header .header-container {
 .logo-link h1 {
     margin-bottom: 0;
     font-size: 1.6em;
-    color: #AFD198; /* Soft Sage Green for logo text */
+    color: #AFD198;
 }
 
-/* Desktop Navigation Styles */
-.main-nav {
-    /* This will be targeted by JS to add .nav-open for mobile */
-}
 .main-nav ul {
     list-style: none;
-    display: flex; /* Horizontal on desktop */
+    display: flex;
     padding-left: 0;
-    margin-bottom: 0; /* Reset for ul inside nav */
+    margin-bottom: 0;
 }
+
 .main-nav ul li {
-    margin-left: 25px; /* Spacing between desktop nav items */
-    margin-bottom: 0; /* Reset for li inside nav */
+    margin-left: 25px;
+    margin-bottom: 0;
 }
+
 .main-nav ul li a {
     font-weight: 600;
     font-size: 0.95em;
-    color: #DBA979; /* Warm Tan for nav links */
+    color: #DBA979;
     padding: 5px 0;
-    position: relative; /* For ::after underline effect */
+    position: relative;
 }
+
 .main-nav ul li a::after {
     content: '';
     position: absolute;
@@ -133,37 +248,40 @@ header .header-container {
     display: block;
     margin-top: 3px;
     right: 0;
-    background: #AFD198; /* Sage Green underline */
+    background: #AFD198;
     transition: width 0.3s ease;
 }
+
 .main-nav ul li a:hover::after {
     width: 100%;
     left: 0;
     background-color: #AFD198;
 }
+
 .main-nav ul li a:hover {
-    color: #AFD198; /* Sage Green on hover */
+    color: #AFD198;
     text-decoration: none;
 }
 
-/* Burger Menu Toggle */
 .nav-toggle {
-    display: none; /* Hidden by default, shown in media query */
+    display: none;
     background: transparent;
     border: none;
     cursor: pointer;
-    padding: 0.5em; /* Clickable area */
-    z-index: 1100; /* Should be higher than other header elements if it overlays */
-    order: 3; /* If main-nav is also a flex item and you want toggle last */
+    padding: 0.5em;
+    z-index: 1100;
+    order: 3;
 }
+
 .hamburger {
     display: block;
     position: relative;
     width: 28px;
     height: 3px;
-    background-color: #AFD198; /* Sage Green for burger icon */
+    background-color: #AFD198;
     transition: all 0.25s ease-in-out;
 }
+
 .hamburger::before,
 .hamburger::after {
     content: '';
@@ -171,34 +289,39 @@ header .header-container {
     left: 0;
     width: 100%;
     height: 3px;
-    background-color: #AFD198; /* Sage Green */
+    background-color: #AFD198;
     transition: all 0.25s ease-in-out;
 }
-.hamburger::before { top: -8px; } /* Position top line */
-.hamburger::after { bottom: -8px; } /* Position bottom line */
 
-/* Burger to "X" animation when .is-active (toggled by JS) */
+.hamburger::before {
+    top: -8px;
+}
+
+.hamburger::after {
+    bottom: -8px;
+}
+
 .nav-toggle.is-active .hamburger {
-    background-color: transparent; /* Middle line disappears */
+    background-color: transparent;
 }
+
 .nav-toggle.is-active .hamburger::before {
-    transform: translateY(8px) rotate(45deg); /* Top line rotates */
+    transform: translateY(8px) rotate(45deg);
 }
+
 .nav-toggle.is-active .hamburger::after {
-    transform: translateY(-8px) rotate(-45deg); /* Bottom line rotates */
+    transform: translateY(-8px) rotate(-45deg);
 }
 
-
-/* === HOME SECTION WITH SLIDESHOW === */
 #home {
-    /* text-align: center; /* Already applied to .home-content if needed */
-    padding: 0; /* Remove padding from the main section if images fill it */
-    position: relative; /* For absolute positioning of slideshow and content */
-    min-height: 75vh; /* Or your desired height */
-    display: flex; /* To center .home-content vertically and horizontally */
+    padding: 0;
+    position: relative;
+    /* This calculates the height to perfectly fill the screen below the header */
+    min-height: calc(100vh - 82px); 
+    display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden; /* CRITICAL: to contain absolutely positioned images */
+    overflow: hidden;
 }
 
 #nrprint-home-slideshow-container {
@@ -207,8 +330,8 @@ header .header-container {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 1; /* Behind .home-content */
-    background-color: #ECCA9C; /* Fallback color using your palette (Lighter Tan) */
+    z-index: 1;
+    background-color: #ECCA9C;
 }
 
 .nrprint-home-slide-image {
@@ -217,39 +340,37 @@ header .header-container {
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensures image covers the container, may crop */
-    opacity: 0; /* Start transparent */
-    /* CSS Transition for the fade effect */
+    object-fit: cover;
+    opacity: 0;
     transition-property: opacity;
-    transition-duration: 1.2s; /* Matches FADE_DURATION in JS */
-    transition-timing-function: ease-in-out; /* For smooth fade */
-    will-change: opacity; /* Hint for browser optimization */
-    /* z-index is handled by the .active class to ensure smooth transition */
+    transition-duration: 1.2s;
+    transition-timing-function: ease-in-out;
+    will-change: opacity;
 }
 
 .nrprint-home-slide-image.active {
-    opacity: 1; /* Fade in */
-    z-index: 2; /* Bring active image above non-active ones during transition */
+    opacity: 1;
+    z-index: 2;
 }
 
-/* Content overlay needs to be on top of the slideshow */
 .home-content {
-    position: relative; /* To enable z-index stacking */
-    z-index: 3; /* Highest in this section, above slideshow */
-    background-color: rgba(235, 239, 207, 0.85); /* #EBEFCF (Very Light Greenish Beige) with alpha */
+    position: relative;
+    z-index: 3;
+    background-color: rgba(235, 239, 207, 0.85);
     padding: 35px 45px;
     border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(219, 169, 121, 0.15); /* Tan shadow (using #DBA979 as base) */
-    text-align: center; /* Center text inside the content box */
-    color: #5D4037; /* Text color for hero content */
-    max-width: 90%; /* So it doesn't stretch too wide on large screens */
+    box-shadow: 0 4px 15px rgba(219, 169, 121, 0.15);
+    text-align: center;
+    color: #5D4037;
+    max-width: 90%;
 }
 
 .home-content h2 {
     font-size: 2.8em;
     margin-bottom: 0.5em;
-    color: #DBA979; /* Warm Tan for home Title (already set by general h2) */
+    color: #DBA979;
 }
+
 .home-content p {
     font-size: 1.2em;
     margin-bottom: 1.5em;
@@ -257,70 +378,75 @@ header .header-container {
 
 .cta-button {
     display: inline-block;
-    background-color: #AFD198; /* Soft Sage Green */
-    color: #fff; /* White text for good contrast */
+    background-color: #AFD198;
+    color: #fff;
     padding: 14px 30px;
-    border-radius: 25px; /* Pill shape */
+    border-radius: 25px;
     text-decoration: none;
     font-weight: bold;
     font-size: 1.1em;
     transition: background-color 0.3s ease, transform 0.2s ease;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
 }
 
 .cta-button:hover {
-    background-color: #97BF81; /* Darker Sage Green */
+    background-color: #97BF81;
     transform: translateY(-2px);
     text-decoration: none;
     color: #fff;
 }
 
-/* === CONTENT SECTIONS === */
 .content-section {
     padding: 70px 0;
-    border-bottom: 1px solid #ECCA9C; /* Lighter Tan border */
+    border-bottom: 1px solid #ECCA9C;
 }
+
 .content-section:last-of-type {
-    border-bottom: none; /* No border for the last section */
+    border-bottom: none;
 }
+
 .content-section h2 {
     text-align: center;
     margin-bottom: 1.5em;
     position: relative;
     padding-bottom: 0.5em;
 }
-.content-section h2::after { /* Title underline accent */
+
+.content-section h2::after {
     content: '';
     display: block;
     width: 70px;
     height: 3px;
-    background-color: #AFD198; /* Soft Sage Green accent */
+    background-color: #AFD198;
     margin: 0.3em auto 0;
 }
 
-/* === ABOUT SECTION HIGHLIGHT (NEW) === */
 .about-highlight {
     background-color: #FFFFFF;
-    border: 2px dashed #ECCA9C; /* Lighter Tan dashed border */
+    border: 2px dashed #ECCA9C;
     border-radius: 8px;
     padding: 20px 25px;
     margin: 0 auto 35px;
     text-align: center;
     max-width: 600px;
 }
+
 .about-highlight p {
     margin-bottom: 0.8em;
     font-size: 1.1em;
     line-height: 1.5;
 }
+
 .about-highlight p:last-child {
     margin-bottom: 0;
 }
+
 .about-highlight ul {
     list-style: none;
     padding: 0;
     margin-bottom: 1em;
 }
+
 .about-highlight li {
     display: inline-block;
     margin: 0 10px 0.5em;
@@ -328,356 +454,598 @@ header .header-container {
     color: #5D4037;
     position: relative;
 }
+
 .about-highlight li::before {
     content: '•';
-    color: #AFD198; /* Soft Sage Green bullet */
+    color: #AFD198;
     position: absolute;
     left: -15px;
 }
+
 .about-highlight strong {
-    color: #DBA979; /* Warm Tan */
+    color: #DBA979;
 }
+
 .about-highlight em {
-    color: #AFD198; /* Sage Green */
-    font-style: normal; /* Keep it regular weight but colored */
+    color: #AFD198;
+    font-style: normal;
 }
 
+.philosophy-box {
+    background-color: #FFFFFF;
+    border-left: 5px solid #AFD198;
+    padding: 25px 30px;
+    margin: 40px auto 0;
+    border-radius: 0 8px 8px 0;
+    box-shadow: 0 4px 15px rgba(219, 169, 121, 0.1);
+}
 
-/* === SERVICE GRID === */
-.service-grid {
+.philosophy-box h3 {
+    color: #DBA979;
+    margin-top: 0;
+    margin-bottom: 1em;
+}
+
+.philosophy-box p {
+    font-size: 1.05em;
+    color: #5D4037;
+}
+
+.philosophy-box .mission-statement {
+    font-style: italic;
+    color: #DBA979;
+    margin-top: 1.5em;
+    margin-bottom: 0;
+}
+
+.product-techniques-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 30px;
     margin-top: 20px;
 }
 
-.service-item {
+.technique-card {
     background-color: #FFFFFF;
     padding: 25px;
     border-radius: 8px;
-    border: 1px solid #ECCA9C; /* Lighter Tan border */
-    box-shadow: 0 3px 12px rgba(219, 169, 121, 0.08); /* Tan shadow */
-    text-align: center;
+    border: 1px solid #ECCA9C;
+    box-shadow: 0 3px 12px rgba(219, 169, 121, 0.08);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
 }
-.service-item:hover {
+
+.technique-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 6px 20px rgba(219, 169, 121, 0.12); /* Enhanced Tan shadow */
+    box-shadow: 0 6px 20px rgba(219, 169, 121, 0.12);
 }
-.service-item img {
+
+.technique-card img {
     width: 100%;
     height: 220px;
     object-fit: cover;
-    border-radius: 6px; /* Slightly rounded corners for images inside cards */
+    border-radius: 6px;
     margin-bottom: 20px;
 }
-.service-item h3 {
-    color: #AFD198; /* Soft Sage Green for service titles */
+
+.technique-card h3 {
+    color: #AFD198;
     margin-bottom: 0.5em;
 }
 
-/* === PORTFOLIO GRID === */
+.product-list {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 15px;
+}
+
+.product-list li {
+    padding-left: 25px;
+    position: relative;
+    margin-bottom: 8px;
+}
+
+.product-list li::before {
+    content: '✓';
+    color: #AFD198;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: 1px;
+}
+
+.portfolio-filters {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.filter-btn {
+    background-color: transparent;
+    border: 2px solid #ECCA9C;
+    color: #DBA979;
+    padding: 8px 20px;
+    margin: 5px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9em;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+    background-color: #ECCA9C;
+    color: #5D4037;
+}
+
+.filter-btn.active {
+    background-color: #AFD198;
+    border-color: #AFD198;
+    color: #FFFFFF;
+}
+
 .portfolio-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 20px;
     margin-top: 20px;
 }
-.portfolio-grid img {
+
+.portfolio-item {
+    display: block;
+    text-decoration: none;
     border-radius: 6px;
-    box-shadow: 0 3px 8px rgba(219, 169, 121, 0.1); /* Tan shadow */
+    overflow: hidden;
+}
+
+.portfolio-item img {
+    border-radius: 6px;
+    box-shadow: 0 3px 8px rgba(219, 169, 121, 0.1);
     transition: transform 0.3s ease, opacity 0.3s ease;
     width: 100%;
-    height: 250px; /* Consistent height for portfolio images */
+    height: 250px;
     object-fit: cover;
-    border: 1px solid #ECCA9C; /* Lighter Tan border */
+    border: 1px solid #ECCA9C;
 }
-.portfolio-grid img:hover {
+
+.portfolio-item:hover img {
     transform: scale(1.05);
     opacity: 0.85;
 }
 
-/* === FACEBOOK GALLERY === */
-#facebook-gallery .facebook-embed-container {
-    width: 100%;
-    max-width: 600px; /* Adjusted for better fit, can be wider if desired */
-    margin: 20px auto 0; /* 'auto' horizontally centers the container */
-}
-/* These rules help make the Facebook plugin responsive */
-.fb-page,
-.fb-page iframe[style], /* Target the iframe Facebook injects */
-.fb-page span { /* Target the span Facebook might wrap the iframe in */
-    max-width: 100% !important; /* Force responsiveness */
-    width: auto !important; /* Let it adapt */
+.client-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
 }
 
-
-/* === ACCOMPLISHMENTS (ACCORDION) === */
-.accordion-container {
-    width: 100%;
-    margin-top: 30px;
-    max-width: 800px; /* Constrain width for readability */
-    margin-left: auto;
-    margin-right: auto;
-}
-.accordion-item {
+.client-item {
     background-color: #FFFFFF;
-    margin-bottom: 12px;
-    border-radius: 6px;
-    box-shadow: 0 2px 8px rgba(219, 169, 121, 0.06); /* Tan shadow */
-    overflow: hidden; /* Important for the max-height transition */
-    border: 1px solid #ECCA9C; /* Lighter Tan border */
-}
-.accordion-header {
-    background-color: #ECCA9C; /* Lighter Tan for header */
-    color: #5D4037; /* Dark brown text for contrast */
-    cursor: pointer;
-    padding: 18px 25px;
-    width: 100%;
-    text-align: left;
-    border: none; /* Remove default button border */
-    outline: none; /* Remove default button outline */
-    font-size: 1.25em;
-    font-weight: 600;
-    transition: background-color 0.3s ease;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.accordion-header:hover,
-.accordion-header.active { /* Style for active/hovered accordion header */
-    background-color: #D7BEA0; /* Slightly darker Lighter Tan */
-}
-.accordion-icon {
-    font-size: 1.6em;
-    font-weight: 300; /* Lighter weight for + / - */
-    line-height: 1; /* Ensure icon aligns well */
-    color: #AFD198; /* Soft Sage Green icon */
-}
-.accordion-content {
-    max-height: 0; /* Initially hidden */
-    overflow: hidden;
-    transition: max-height 0.45s cubic-bezier(0.4, 0, 0.2, 1); /* Smoother ease for accordion */
-    background-color: #fff; /* Content background */
-}
-.accordion-content-inner {
-    padding: 25px;
-    border-top: 1px solid #ECCA9C; /* Separator line */
-}
-.accordion-content-inner p {
-    margin-bottom: 15px;
-    font-size: 0.95em;
-}
-.accordion-content-inner img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 5px;
-    margin-top: 15px;
-    box-shadow: 0 2px 6px rgba(219, 169, 121, 0.08); /* Tan shadow */
-}
-.note {
-    font-style: italic;
+    border-radius: 8px;
+    padding: 20px 15px;
+    border: 1px solid #ECCA9C;
+    box-shadow: 0 2px 8px rgba(219, 169, 121, 0.07);
     text-align: center;
-    margin-top: 30px;
-    color: #DBA979; /* Warm Tan */
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 150px;
 }
 
-/* === CONTACT SECTION === */
+.client-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(219, 169, 121, 0.12);
+    text-decoration: none;
+}
+
+.client-item img {
+    height: 60px;
+    width: auto;
+    max-width: 120px;
+    object-fit: contain;
+    margin-bottom: 15px;
+    border-radius: 0;
+}
+
+.client-item span {
+    color: #5D4037;
+    font-weight: 600;
+    font-size: 0.9em;
+    line-height: 1.4;
+}
+
 .contact-methods {
     display: flex;
-    flex-wrap: wrap; /* Allow wrapping on smaller screens */
-    gap: 40px; /* Space between form idea and details */
+    flex-wrap: wrap;
+    gap: 40px;
     margin-top: 30px;
 }
+
 .contact-form-container,
 .contact-details {
-    flex: 1; /* Each takes up half the space on wider screens */
-    min-width: 300px; /* Minimum width before wrapping */
+    flex: 1;
+    min-width: 300px;
     background-color: #FFFFFF;
     padding: 30px;
     border-radius: 8px;
-    border: 1px solid #ECCA9C; /* Lighter Tan border */
-    box-shadow: 0 3px 12px rgba(219, 169, 121, 0.08); /* Tan shadow */
+    border: 1px solid #ECCA9C;
+    box-shadow: 0 3px 12px rgba(219, 169, 121, 0.08);
 }
+
 .contact-form-container h3,
 .contact-details h3 {
     margin-top: 0;
-    color: #AFD198; /* Soft Sage Green */
+    color: #AFD198;
 }
+
 .contact-form-container ul {
-    padding-left: 20px; /* Indent list items */
+    padding-left: 20px;
     margin-bottom: 20px;
 }
+
 .contact-info {
     list-style: none;
     padding-left: 0;
 }
+
 .contact-info li {
     display: flex;
     align-items: center;
-    margin-bottom: 18px; /* Increased spacing */
+    margin-bottom: 18px;
     font-size: 1.05em;
 }
+
 .contact-info li:last-child {
     margin-bottom: 0;
 }
+
 .contact-info li strong {
-    color: #DBA979; /* Warm Tan */
+    color: #DBA979;
     margin-right: 0.5em;
 }
+
 .contact-icon {
-    flex-shrink: 0; /* Prevent icon from shrinking on small screens */
+    flex-shrink: 0;
     width: 24px;
     height: 24px;
     margin-right: 15px;
-    fill: #DBA979; /* Warm Tan for icon fill */
+    fill: #DBA979;
 }
 
-.contact-button { /* Uses .cta-button styles, so it will be Sage Green */
+.contact-button {
     margin-top: 20px;
-    width: auto; /* Fit content */
+    width: auto;
     padding: 12px 25px;
 }
 
-/* MAP STYLES (NEW) */
 .map-container {
     margin-top: 50px;
     border: 1px solid #ECCA9C;
     border-radius: 8px;
     box-shadow: 0 3px 12px rgba(219, 169, 121, 0.08);
-    overflow: hidden; /* Keeps border-radius on the iframe */
+    overflow: hidden;
     background-color: #FFFFFF;
 }
+
 .map-container h3 {
     text-align: center;
     padding: 20px 20px 0;
     margin-bottom: 20px;
     color: #AFD198;
 }
+
 .map-container iframe {
-    display: block; /* Remove default inline spacing */
+    display: block;
     width: 100%;
     height: 400px;
     border: 0;
 }
 
-/* === FOOTER === */
 footer {
-    background-color: #DBA979; /* Warm Tan background */
-    color: #EBEFCF; /* Light Greenish Beige text for contrast */
+    background-color: #DBA979;
+    color: #EBEFCF;
     text-align: center;
     padding: 30px 0;
-    margin-top: 40px; /* Space above footer */
+    margin-top: 40px;
 }
+
 footer p {
     margin-bottom: 0.5em;
-    color: #EBEFCF; /* Ensure paragraph text also uses light color */
+    color: #EBEFCF;
 }
+
 footer a {
-    color: #FFFFFF; /* White links for better pop on Tan */
+    color: #FFFFFF;
 }
+
 footer a:hover {
-    color: #F5F5F5; /* Slightly off-white hover */
+    color: #F5F5F5;
 }
 
-
-/* === RESPONSIVE ADJUSTMENTS === */
-@media (max-width: 992px) { /* Tablets and larger phones */
-    .home-content h2 { font-size: 2.2em; }
-    .home-content p { font-size: 1.1em; }
-    .cta-button { padding: 12px 25px; font-size: 1em; }
-}
-
-@media (max-width: 768px) { /* Smaller tablets and mobile - Burger menu activates */
-    .nav-toggle {
-        display: block; /* Show burger button */
+@media (max-width: 992px) {
+    .home-content h2 {
+        font-size: 2.2em;
     }
 
-    .main-nav { /* This is the desktop nav initially, now styled for mobile when open */
-        display: none; /* Hide by default on mobile, JS adds .nav-open */
+    .home-content p {
+        font-size: 1.1em;
+    }
+
+    .cta-button {
+        padding: 12px 25px;
+        font-size: 1em;
+    }
+
+    .client-grid {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-toggle {
+        display: block;
+    }
+
+    .main-nav {
+        display: none;
         flex-direction: column;
         position: fixed;
         top: 0;
-        right: -300px; /* Start off-screen (width of nav + buffer) */
-        width: 280px;  /* Width of the slide-out menu */
-        height: 100vh; /* Full viewport height */
-        background-color: #FFFFFF; /* Mobile nav background */
-        box-shadow: -2px 0 10px rgba(219, 169, 121, 0.2); /* Tan shadow on left edge */
-        padding-top: 20px; /* Space at top of menu */
-        z-index: 1050; /* High z-index to be on top */
-        transition: right 0.3s ease-in-out; /* Smooth slide animation */
-        overflow-y: auto; /* Allow scrolling if many links */
+        right: -300px;
+        width: 280px;
+        height: 100vh;
+        background-color: #FFFFFF;
+        box-shadow: -2px 0 10px rgba(219, 169, 121, 0.2);
+        padding-top: 20px;
+        z-index: 1050;
+        transition: right 0.3s ease-in-out;
+        overflow-y: auto;
     }
 
     .main-nav.nav-open {
-        display: flex; /* Show the nav when .nav-open is active */
-        right: 0; /* Slide it into view */
+        display: flex;
+        right: 0;
     }
 
-    /* Styles for the list and links inside the mobile nav */
     .main-nav ul {
-        flex-direction: column; /* Stack links vertically */
+        flex-direction: column;
         width: 100%;
         padding: 0;
         margin-top: 1em;
     }
+
     .main-nav ul li {
-        margin: 0; /* Remove side margins */
+        margin: 0;
         width: 100%;
     }
+
     .main-nav ul li a {
         display: block;
-        padding: 0.9em 1.5em; /* Padding for touch targets */
+        padding: 0.9em 1.5em;
         text-align: left;
-        border-bottom: 1px solid #EBEFCF; /* Lightest beige separator */
-        color: #DBA979; /* Warm Tan for links */
-        font-size: 1.05em; /* Slightly larger for mobile */
+        border-bottom: 1px solid #EBEFCF;
+        color: #DBA979;
+        font-size: 1.05em;
     }
+
     .main-nav ul li a:hover {
-        background-color: #EBEFCF; /* Lightest beige background on hover */
-        color: #AFD198; /* Sage Green text on hover */
+        background-color: #EBEFCF;
+        color: #AFD198;
         text-decoration: none;
     }
-    .main-nav ul li a::after { /* Remove desktop underline effect for mobile */
+
+    .main-nav ul li a::after {
         display: none;
     }
+
     .main-nav ul li:last-child a {
-        border-bottom: none; /* No border on the last item */
+        border-bottom: none;
     }
 
-    /* Other responsive adjustments for content sections */
-    #home { padding: 0; min-height: 60vh; } /* Adjust padding if needed due to full-bg image */
-    .home-content { padding: 25px 30px; max-width: 95%;} /* Ensure content box is not too wide */
-    .home-content h2 { font-size: 2em; }
-    .home-content p { font-size: 1em; }
+    #home {
+        padding: 0;
+        min-height: 60vh;
+    }
 
-    .content-section { padding: 50px 0; }
-    h1 { font-size: 2em; }
-    h2 { font-size: 1.7em; } /* General section titles */
-    h3 { font-size: 1.3em; } /* Sub-headings like service item titles */
+    .home-content {
+        padding: 25px 30px;
+        max-width: 95%;
+    }
 
-    .service-grid, .portfolio-grid {
-        grid-template-columns: 1fr; /* Stack items */
+    .home-content h2 {
+        font-size: 2em;
+    }
+
+    .home-content p {
+        font-size: 1em;
+    }
+
+    .content-section {
+        padding: 50px 0;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.7em;
+    }
+
+    h3 {
+        font-size: 1.3em;
+    }
+
+    .product-techniques-grid,
+    .portfolio-grid {
+        grid-template-columns: 1fr;
         gap: 25px;
     }
-    .service-item img, .portfolio-grid img { height: 200px; }
 
-    .contact-methods { flex-direction: column; gap: 30px; }
-    .about-highlight li { display: block; } /* Stack list items on mobile */
-    .about-highlight li::before { display: none; } /* Hide decorative bullet points on mobile */
+    .technique-card img,
+    .portfolio-item img {
+        height: 200px;
+    }
+
+    .contact-methods {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .about-highlight li {
+        display: block;
+    }
+
+    .about-highlight li::before {
+        display: none;
+    }
+
+    .portfolio-filters {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 }
 
-@media (max-width: 480px) { /* Small mobile phones */
-    .home-content h2 { font-size: 1.7em; }
-    .home-content p { font-size: 0.9em; }
-    .cta-button { padding: 10px 20px; font-size: 0.95em; }
-    #logo { height: 50px; }
-    .logo-link h1 { font-size: 1.4em; }
-    .accordion-header { font-size: 1.1em; padding: 15px 20px; }
-    .accordion-content-inner { padding: 20px; }
+@media (max-width: 480px) {
+    .home-content h2 {
+        font-size: 1.7em;
+    }
 
-    .main-nav { /* Adjust mobile nav for very small screens if needed */
-        width: 250px; /* Slightly smaller width for nav panel */
-        right: -270px; /* Adjust initial off-screen position accordingly */
+    .home-content p {
+        font-size: 0.9em;
+    }
+
+    .cta-button {
+        padding: 10px 20px;
+        font-size: 0.95em;
+    }
+
+    #logo {
+        height: 50px;
+    }
+
+    .logo-link h1 {
+        font-size: 1.4em;
+    }
+
+    .main-nav {
+        width: 250px;
+        right: -270px;
+    }
+
+    .client-grid {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 15px;
+    }
+
+    .client-item {
+        min-height: 120px;
+    }
+
+    .client-item img {
+        height: 50px;
+    }
+}
+
+ 
+
+@media (max-width: 768px) {
+    /* ... (all your other existing mobile styles like .nav-toggle, .main-nav, etc. remain the same) ... */
+
+    .nav-toggle { display: block; }
+    .main-nav { display: none; flex-direction: column; position: fixed; top: 0; right: -300px; width: 280px; height: 100vh; background-color: #FFFFFF; box-shadow: -2px 0 10px rgba(219, 169, 121, 0.2); padding-top: 20px; z-index: 1050; transition: right 0.3s ease-in-out; overflow-y: auto; }
+    .main-nav.nav-open { display: flex; right: 0; }
+    .main-nav ul { flex-direction: column; width: 100%; padding: 0; margin-top: 1em; }
+    .main-nav ul li { margin: 0; width: 100%; }
+    .main-nav ul li a { display: block; padding: 0.9em 1.5em; text-align: left; border-bottom: 1px solid #EBEFCF; color: #DBA979; font-size: 1.05em; }
+    .main-nav ul li a:hover { background-color: #EBEFCF; color: #AFD198; text-decoration: none; }
+    .main-nav ul li a::after { display: none; }
+    .main-nav ul li:last-child a { border-bottom: none; }
+    #home { padding: 0; min-height: 60vh; }
+    .home-content { padding: 25px 30px; max-width: 95%;}
+    .home-content h2 { font-size: 2em; }
+    .home-content p { font-size: 1em; }
+    .content-section { padding: 50px 0; }
+    h1 { font-size: 2em; }
+    h2 { font-size: 1.7em; }
+    h3 { font-size: 1.3em; }
+    .product-techniques-grid { grid-template-columns: 1fr; gap: 25px; } /* Kept as 1-column */
+    .technique-card img { height: 200px; }
+    .contact-methods { flex-direction: column; gap: 30px; }
+    .about-highlight li { display: block; }
+    .about-highlight li::before { display: none; }
+
+    /* === UPDATED PORTFOLIO STYLES FOR MOBILE === */
+    .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr); /* CHANGE: Use a 2-column grid on mobile */
+        gap: 15px; /* Slightly reduce the gap for a tighter look */
+    }
+
+    .portfolio-item img {
+        height: 180px; /* Optional: Adjust height for the 2-column view */
+    }
+
+    .portfolio-filters {
+        /* NEW: Make the filter buttons scroll horizontally */
+        display: flex;
+        overflow-x: auto; /* Allows horizontal scrolling */
+        white-space: nowrap; /* Prevents buttons from wrapping to the next line */
+        -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+        padding-bottom: 15px; /* Adds space for the scrollbar so it doesn't overlap content */
+        justify-content: flex-start; /* Align buttons to the left */
+    }
+
+    /* Optional: Hide the scrollbar for a cleaner look */
+    .portfolio-filters::-webkit-scrollbar {
+        display: none;
+    }
+    .portfolio-filters {
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+    }
+    /* === END OF UPDATED PORTFOLIO STYLES === */
+}
+
+/* === SECTION INTRO BLOCKS (NEW) === */
+.section-intro {
+    text-align: center;
+    max-width: 700px; /* Constrains width for better readability */
+    margin: 0 auto 50px; /* Centers the block and adds space below it */
+}
+
+.section-intro h4 {
+    font-size: 1.6em;
+    color: #5D4037; /* Darker brown for a strong, professional headline */
+    font-weight: 600;
+    margin-bottom: 0.4em;
+}
+
+.section-intro p {
+    font-size: 1.1em;
+    color: #DBA979; /* Warm Tan for the softer sub-headline */
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+.section-intro .intro-icon {
+    display: block;
+    margin: 0 auto 15px;
+    width: 40px;
+    height: 40px;
+    fill: #AFD198; /* Uses your sage green accent color */
+}
+
+/* Responsive adjustment for the new intro text */
+@media (max-width: 768px) {
+    .section-intro h4 {
+        font-size: 1.4em;
+    }
+    .section-intro p {
+        font-size: 1em;
     }
 }
