@@ -2,7 +2,7 @@ aws_region = "ap-southeast-1" # Change this to your preferred region
 
 
 
-bucket_name = "nrprinthk_bucket.com" # Change this to a unique name
+bucket_name = "nrprinthk-bucket" # Change this to a unique name
 
 
 domain_name = "nrprinthk.com"
