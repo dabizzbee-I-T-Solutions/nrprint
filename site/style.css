@@ -245,9 +245,6 @@ header .header-container {
     max-width: 90%; /* So it doesn't stretch too wide on large screens */
 }
 
-/* REMOVED Slideshow Controls: Arrows and Dots as they were not in your HTML or JS plan */
-/* If you want them, you'll need to add HTML elements and JS to control them */
-
 .home-content h2 {
     font-size: 2.8em;
     margin-bottom: 0.5em;
@@ -256,7 +253,6 @@ header .header-container {
 .home-content p {
     font-size: 1.2em;
     margin-bottom: 1.5em;
-    /* color: #5D4037; /* Inherited from .home-content or body */
 }
 
 .cta-button {
@@ -275,8 +271,8 @@ header .header-container {
 .cta-button:hover {
     background-color: #97BF81; /* Darker Sage Green */
     transform: translateY(-2px);
-    text-decoration: none; /* Redundant if already set on a */
-    color: #fff; /* Redundant if already set on .cta-button */
+    text-decoration: none;
+    color: #fff;
 }
 
 /* === CONTENT SECTIONS === */
@@ -292,7 +288,6 @@ header .header-container {
     margin-bottom: 1.5em;
     position: relative;
     padding-bottom: 0.5em;
-    /* color: #DBA979; /* Already set by general h2 styles */
 }
 .content-section h2::after { /* Title underline accent */
     content: '';
@@ -301,6 +296,50 @@ header .header-container {
     height: 3px;
     background-color: #AFD198; /* Soft Sage Green accent */
     margin: 0.3em auto 0;
+}
+
+/* === ABOUT SECTION HIGHLIGHT (NEW) === */
+.about-highlight {
+    background-color: #FFFFFF;
+    border: 2px dashed #ECCA9C; /* Lighter Tan dashed border */
+    border-radius: 8px;
+    padding: 20px 25px;
+    margin: 0 auto 35px;
+    text-align: center;
+    max-width: 600px;
+}
+.about-highlight p {
+    margin-bottom: 0.8em;
+    font-size: 1.1em;
+    line-height: 1.5;
+}
+.about-highlight p:last-child {
+    margin-bottom: 0;
+}
+.about-highlight ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1em;
+}
+.about-highlight li {
+    display: inline-block;
+    margin: 0 10px 0.5em;
+    font-style: italic;
+    color: #5D4037;
+    position: relative;
+}
+.about-highlight li::before {
+    content: '•';
+    color: #AFD198; /* Soft Sage Green bullet */
+    position: absolute;
+    left: -15px;
+}
+.about-highlight strong {
+    color: #DBA979; /* Warm Tan */
+}
+.about-highlight em {
+    color: #AFD198; /* Sage Green */
+    font-style: normal; /* Keep it regular weight but colored */
 }
 
 
@@ -335,7 +374,6 @@ header .header-container {
 .service-item h3 {
     color: #AFD198; /* Soft Sage Green for service titles */
     margin-bottom: 0.5em;
-    /* font-size: 1.5em; /* General h3 style is fine */
 }
 
 /* === PORTFOLIO GRID === */
@@ -415,7 +453,6 @@ header .header-container {
     font-weight: 300; /* Lighter weight for + / - */
     line-height: 1; /* Ensure icon aligns well */
     color: #AFD198; /* Soft Sage Green icon */
-    /* transition: transform 0.3s ease; /* Optional: for rotating icon */
 }
 .accordion-content {
     max-height: 0; /* Initially hidden */
@@ -430,7 +467,6 @@ header .header-container {
 .accordion-content-inner p {
     margin-bottom: 15px;
     font-size: 0.95em;
-    /* color: #5D4037; /* Inherited */
 }
 .accordion-content-inner img {
     max-width: 100%;
@@ -477,18 +513,53 @@ header .header-container {
     padding-left: 0;
 }
 .contact-info li {
-    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 18px; /* Increased spacing */
     font-size: 1.05em;
+}
+.contact-info li:last-child {
+    margin-bottom: 0;
 }
 .contact-info li strong {
     color: #DBA979; /* Warm Tan */
+    margin-right: 0.5em;
 }
+.contact-icon {
+    flex-shrink: 0; /* Prevent icon from shrinking on small screens */
+    width: 24px;
+    height: 24px;
+    margin-right: 15px;
+    fill: #DBA979; /* Warm Tan for icon fill */
+}
+
 .contact-button { /* Uses .cta-button styles, so it will be Sage Green */
     margin-top: 20px;
     width: auto; /* Fit content */
     padding: 12px 25px;
 }
 
+/* MAP STYLES (NEW) */
+.map-container {
+    margin-top: 50px;
+    border: 1px solid #ECCA9C;
+    border-radius: 8px;
+    box-shadow: 0 3px 12px rgba(219, 169, 121, 0.08);
+    overflow: hidden; /* Keeps border-radius on the iframe */
+    background-color: #FFFFFF;
+}
+.map-container h3 {
+    text-align: center;
+    padding: 20px 20px 0;
+    margin-bottom: 20px;
+    color: #AFD198;
+}
+.map-container iframe {
+    display: block; /* Remove default inline spacing */
+    width: 100%;
+    height: 400px;
+    border: 0;
+}
 
 /* === FOOTER === */
 footer {
@@ -592,7 +663,8 @@ footer a:hover {
     .service-item img, .portfolio-grid img { height: 200px; }
 
     .contact-methods { flex-direction: column; gap: 30px; }
-    /* .contact-form-container, .contact-details already have min-width, will stack fine */
+    .about-highlight li { display: block; } /* Stack list items on mobile */
+    .about-highlight li::before { display: none; } /* Hide decorative bullet points on mobile */
 }
 
 @media (max-width: 480px) { /* Small mobile phones */
