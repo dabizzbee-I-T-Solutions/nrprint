@@ -1,264 +1,78 @@
 /* === RESPONSIVE STYLES for TABLETS AND LARGER PHONES === */
 @media (max-width: 992px) {
-    .home-content h2 {
-        font-size: 2.2em;
-    }
-
-    .home-content p {
-        font-size: 1.1em;
-    }
-
-    .cta-button {
-        padding: 12px 25px;
-        font-size: 1em;
-    }
-
-    .client-grid {
-        /* Use 4 columns on tablets */
-        grid-template-columns: repeat(4, 1fr);
-    }
-
-    .client-item:nth-child(6) {
-        /* IMPORTANT: Reset the stagger effect on tablets */
-        grid-column-start: auto;
-    }
+    .home-content h2 { font-size: 2.2em; }
+    .home-content p { font-size: 1.1em; }
+    .cta-button { padding: 12px 25px; font-size: 1em; }
+    .client-grid { grid-template-columns: repeat(4, 1fr); }
+    .client-item:nth-child(6) { grid-column-start: auto; }
 }
 
 /* === RESPONSIVE STYLES for MOBILE === */
 @media (max-width: 768px) {
-    html {
-        scroll-padding-top: 75px;
-    }
+    html { scroll-padding-top: 75px; }
+    
+    /* Mobile Navigation */
+    .nav-toggle { display: block; }
+    .main-nav { display: none; flex-direction: column; position: fixed; top: 0; right: -300px; width: 280px; height: 100vh; background-color: #FFFFFF; box-shadow: -2px 0 10px rgba(0,0,0, 0.15); z-index: 1050; transition: right 0.3s ease-in-out; overflow-y: auto; }
+    .main-nav.nav-open { display: flex; right: 0; }
+    .main-nav ul { flex-direction: column; width: 100%; padding: 0; margin-top: 1em; }
+    .main-nav ul li a { display: block; padding: 0.9em 1.5em; text-align: left; border-bottom: 1px solid #F4F1EE; color: #8B5E3C; font-size: 1.05em; }
+    .main-nav ul li a:hover { background-color: #F4F1EE; color: #3A7D44; text-decoration: none; }
+    .main-nav ul li a::after { display: none; }
+    .main-nav ul li:last-child a { border-bottom: none; }
+    .header-socials { display: none; }
+    .mobile-nav-socials { display: flex; justify-content: center; gap: 15px; text-align: center; margin-top: auto; padding: 20px 0; border-top: 1px solid #F4F1EE; }
+    
+    /* General Mobile Layout */
+    h1 { font-size: 2em; } h2 { font-size: 1.7em; } h3 { font-size: 1.3em; }
+    .content-section { padding: 50px 0; }
 
-    .nav-toggle {
-        display: block;
-    }
+    /* Specific Sections Mobile Layout */
+    #home { min-height: calc(100vh - 72px); }
+    .home-content { padding: 25px 30px; max-width: 95%; }
+    .home-content h2 { font-size: 2em; }
+    .home-content p { font-size: 1em; }
+    .about-highlight li { display: block; }
+    .about-highlight li::before { display: none; }
+    .product-techniques-grid { grid-template-columns: 1fr; gap: 25px; }
+    .technique-card img { height: 200px; }
+    .portfolio-grid { grid-template-columns: repeat(2, 1fr); gap: 15px; }
+    .portfolio-item img { height: 180px; }
+    .portfolio-filters { display: flex; overflow-x: auto; white-space: nowrap; -webkit-overflow-scrolling: touch; padding-bottom: 15px; justify-content: flex-start; }
+    .portfolio-filters::-webkit-scrollbar { display: none; }
+    .portfolio-filters { -ms-overflow-style: none; scrollbar-width: none; }
+    .portfolio-filters::after { display: block; }
+    .client-grid { grid-template-columns: repeat(3, 1fr); gap: 25px; }
+    .client-item:nth-child(6) { grid-column-start: auto; }
+    .client-item img { width: 100px; height: 100px; }
+    .contact-methods { flex-direction: column; gap: 30px; }
+    .quick-chat-container { display: none; }
+    .contact-form-container .cta-button { padding: 14px 30px; font-size: 1.1em; width: auto; display: inline-block; }
+    .section-intro h4 { font-size: 1.4em; }
+    .section-intro p { font-size: 1em; }
 
-    .main-nav {
-        display: none;
-        flex-direction: column;
-        position: fixed;
-        top: 0;
-        right: -300px;
-        width: 280px;
-        height: 100vh;
-        background-color: #FFFFFF;
-        box-shadow: -2px 0 10px rgba(219, 169, 121, 0.2);
-        z-index: 1050;
-        transition: right 0.3s ease-in-out;
-        overflow-y: auto;
-    }
-
-    .main-nav.nav-open {
-        display: flex;
-        right: 0;
-    }
-
-    .main-nav ul {
-        flex-direction: column;
-        width: 100%;
-        padding: 0;
-        margin-top: 1em;
-    }
-
-    .main-nav ul li {
-        margin: 0;
-        width: 100%;
-    }
-
-    .main-nav ul li a {
-        display: block;
-        padding: 0.9em 1.5em;
-        text-align: left;
-        border-bottom: 1px solid #EBEFCF;
-        color: #DBA979;
-        font-size: 1.05em;
-    }
-
-    .main-nav ul li a:hover {
-        background-color: #EBEFCF;
-        color: #AFD198;
-        text-decoration: none;
-    }
-
-    .main-nav ul li a::after {
-        display: none;
-    }
-
-    .main-nav ul li:last-child a {
-        border-bottom: none;
-    }
-
-    .header-socials {
-        display: none;
-    }
-
-    .mobile-nav-socials {
-        display: block;
-        text-align: center;
-        margin-top: auto;
-        padding: 20px 0;
-        border-top: 1px solid #EBEFCF;
-    }
-
-    .mobile-nav-socials a {
-        display: inline-block;
-        margin: 0 15px;
-    }
-
-    .mobile-nav-socials a svg {
-        width: 26px;
-        height: 26px;
-        fill: #DBA979;
-    }
-
-    .mobile-nav-socials a:hover svg {
-        fill: #AFD198;
-    }
-
-    #home {
-        padding: 0;
-        min-height: calc(100vh - 72px);
-    }
-
-    .home-content {
-        padding: 25px 30px;
-        max-width: 95%;
-    }
-
-    h1 {
-        font-size: 2em;
-    }
-
-    h2 {
-        font-size: 1.7em;
-    }
-
-    h3 {
-        font-size: 1.3em;
-    }
-
-    .home-content h2 {
-        font-size: 2em;
-    }
-
-    .home-content p {
-        font-size: 1em;
-    }
-
-    .content-section {
-        padding: 50px 0;
-    }
-
-    .product-techniques-grid {
-        grid-template-columns: 1fr;
-        gap: 25px;
-    }
-
-    .technique-card img {
-        height: 200px;
-    }
-
-    .contact-methods {
-        flex-direction: column;
-        gap: 30px;
-    }
-
-    .about-highlight li {
-        display: block;
-    }
-
-    .about-highlight li::before {
-        display: none;
-    }
-
-    .portfolio-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
-    }
-
-    .portfolio-item img {
-        height: 180px;
-    }
-
-    .portfolio-filters {
-        display: flex;
-        overflow-x: auto;
-        white-space: nowrap;
-        -webkit-overflow-scrolling: touch;
-        padding-bottom: 15px;
-        justify-content: flex-start;
-    }
-
-    .portfolio-filters::-webkit-scrollbar {
-        display: none;
-    }
-
-    .portfolio-filters {
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-    }
-
-    .section-intro h4 {
-        font-size: 1.4em;
-    }
-
-    .section-intro p {
-        font-size: 1em;
-    }
-
-    .client-grid {
-        /* Use a simple 3-column grid for smaller tablets/phones */
-        grid-template-columns: repeat(3, 1fr);
-        gap: 25px;
-    }
-
-    .client-item img {
-        width: 100px;
-        height: 100px;
-    }
-
-    .client-item:nth-child(6) {
-        /* Ensure the stagger effect is still reset */
-        grid-column-start: auto;
-    }
+    /* FAB STYLES - ONLY ON MOBILE */
+    .fab-container { display: block; position: fixed; bottom: 25px; right: 25px; z-index: 1000; text-align: right; }
+    .fab-main { background-color: #FF6B61; color: white; width: 60px; height: 60px; border-radius: 50%; border: none; box-shadow: 0 4px 12px rgba(0,0,0,0.2); cursor: pointer; display: flex; justify-content: center; align-items: center; transition: transform 0.3s ease; position: relative; overflow: hidden; }
+    .fab-main i { position: absolute; transition: transform 0.3s ease, opacity 0.2s; font-size: 1.6em; }
+    .fab-main .fa-xmark { transform: translateY(50px); opacity: 0; }
+    .fab-container.open .fab-main .fa-comment-dots { transform: translateY(-50px); opacity: 0; }
+    .fab-container.open .fab-main .fa-xmark { transform: translateY(0); opacity: 1; }
+    .fab-options { display: flex; flex-direction: column; gap: 15px; margin-bottom: 20px; transform: scale(0); transform-origin: bottom right; transition: transform 0.3s ease; }
+    .fab-container.open .fab-options { transform: scale(1); }
+    .fab-link { width: 50px; height: 50px; border-radius: 50%; color: white; display: flex; justify-content: center; align-items: center; box-shadow: 0 3px 8px rgba(0,0,0,0.15); text-decoration: none; font-size: 24px; }
+    .fab-link.messenger { background-color: #0084FF; }
+    .fab-link.whatsapp { background-color: #25D366; }
 }
 
 /* === RESPONSIVE STYLES for SMALL MOBILE === */
 @media (max-width: 480px) {
-    .home-content h2 {
-        font-size: 1.7em;
-    }
-
-    .home-content p {
-        font-size: 0.9em;
-    }
-
-    .cta-button {
-        padding: 10px 20px;
-        font-size: 0.95em;
-    }
-
-    #logo {
-        height: 50px;
-    }
-
-    .logo-link h1 {
-        font-size: 1.4em;
-    }
-
-    .main-nav {
-        width: 250px;
-        right: -270px;
-    }
-
-    .client-grid {
-        grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
-        gap: 25px;
-    }
-
-    .client-item img {
-        width: 100px;
-        height: 100px;
-    }
+    .home-content h2 { font-size: 1.7em; }
+    .home-content p { font-size: 0.9em; }
+    .cta-button { padding: 10px 20px; font-size: 0.95em; }
+    #logo { height: 50px; }
+    .logo-link h1 { font-size: 1.4em; }
+    .main-nav { width: 250px; right: -270px; }
+    .client-grid { grid-template-columns: repeat(2, 1fr); }
+    .icon-list li { align-items: center; }
 }

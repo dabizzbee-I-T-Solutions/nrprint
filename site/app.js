@@ -8,11 +8,11 @@ document.addEventListener('DOMContentLoaded', function () {
     const body = document.body;
 
     if (navToggle && mainNav) {
-        navToggle.addEventListener('click', function() {
+        navToggle.addEventListener('click', function () {
             // Toggle classes to show/hide menu and animate the button
             this.classList.toggle('is-active');
             mainNav.classList.toggle('nav-open');
-            
+
             // Prevent body from scrolling when menu is open
             body.classList.toggle('no-scroll');
         });
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (portfolioFiltersContainer && portfolioGrid) {
         const isMobile = window.innerWidth <= 768;
-        const limitPerCategoryInAllView = isMobile ? 1 : 2; 
+        const limitPerCategoryInAllView = isMobile ? 1 : 2;
 
         const portfolioData = [
             { name: 'T-shirts', filter: 'tshirts', count: 8, filePrefix: 'tshirt', altText: 'Portfolio T-shirt example' },
@@ -89,12 +89,20 @@ document.addEventListener('DOMContentLoaded', function () {
             button.addEventListener('click', function () {
                 filterButtons.forEach(btn => btn.classList.remove('active'));
                 this.classList.add('active');
-                
+
                 const filterValue = this.getAttribute('data-filter');
                 filterPortfolio(filterValue);
             });
         });
-        
+
         filterPortfolio('all');
+    }
+    const fabContainer = document.querySelector('.fab-container');
+    const fabMain = document.querySelector('.fab-main');
+
+    if (fabMain && fabContainer) {
+        fabMain.addEventListener('click', () => {
+            fabContainer.classList.toggle('open');
+        });
     }
 });
