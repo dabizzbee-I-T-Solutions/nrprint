@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const portfolioData = [
         { name: 'T-shirts', filter: 'tshirts', count: 8, filePrefix: 'tshirt', altText: 'Portfolio T-shirt example' },
         { name: 'Hoodies', filter: 'hoodies', count: 8, filePrefix: 'hoodie', altText: 'Portfolio Hoodie example' },
-        { name: 'Hats', filter: 'hats', count: 8, filePrefix: 'hat', altText: 'Portfolio Hat example' },
+        { name: 'Hats', filter: 'hats', count: 6, filePrefix: 'hat', altText: 'Portfolio Hat example' },
         { name: 'Mugs', filter: 'mugs', count: 8, filePrefix: 'mug', altText: 'Portfolio Mug example' },
         { name: 'Tumblers', filter: 'tumblers', count: 8, filePrefix: 'tumbler', altText: 'Portfolio Tumbler example' },
         { name: 'Tote Bags', filter: 'totes', count: 8, filePrefix: 'tote', altText: 'Portfolio Tote Bag example' }
