@@ -113,14 +113,7 @@ resource "aws_s3_object" "site_objects" {
     aws_s3_bucket_policy.cloudfront_access_policy
   ]
 }
-
-# --- REMOVED ALL CLOUDFRONT LOGGING RESOURCES ---
-# resource "aws_s3_bucket" "cloudfront_logs"
-# resource "aws_s3_bucket_public_access_block" "cloudfront_logs_block_public"
-# resource "aws_s3_bucket_ownership_controls" "cloudfront_logs_ownership"
-# resource "aws_s3_bucket_policy" "cloudfront_logs_policy"
-# --- END OF REMOVED LOGGING RESOURCES ---
-
+ 
 
 # ------------------------------------------------------------------------------
 # CloudFront Distribution

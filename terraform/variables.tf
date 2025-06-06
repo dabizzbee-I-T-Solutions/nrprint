@@ -7,8 +7,7 @@ variable "aws_region" {
 
 variable "bucket_name" {
   description = "The name of the S3 bucket for the website."
-  type        = string
-  default     = "resume.alfieopo.com" # Change this to a unique name
+  type        = string 
 }
 
 variable "upload_role_arn" {
@@ -20,23 +19,19 @@ variable "upload_role_arn" {
 variable "domain_name" {
   description = "The custom domain name for the CloudFront distribution (e.g., resume.alfieopo.com)."
   type        = string
-  default     = "resume.alfieopo.com"
+  default     = "nrprinthk.com"
 }
 
 variable "acm_certificate_arn" {
   description = "ARN of the ACM certificate for the custom domain. Ensure it's in us-east-1 for CloudFront."
-  type        = string
-  default     = "arn:aws:acm:ap-southeast-1:206926705002:certificate/262dd097-8154-40ba-a05e-3a12120b060b"
+  type        = string 
 }
 
 
 variable "tags" {
   description = "A map of tags to assign to resources."
   type        = map(string)
-  default = {
-    Environment = "Production"
-    Project     = "Alfie Opo Resume"
-  }
+  
 }
 
 variable "region" {
