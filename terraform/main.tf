@@ -72,6 +72,7 @@ resource "aws_s3_bucket_policy" "cloudfront_access_policy" {
 locals {
   website_files = {
     "style.css"                                         = { path = "${path.module}/../site/style.css", type = "text/css" },
+    "responsive.css"                                         = { path = "${path.module}/../site/responsive.css", type = "text/css" },
     "sketch.js"                                         = { path = "${path.module}/../site/sketch.js", type = "text/javascript" },
     "slides.js"                                         = { path = "${path.module}/../site/slides.js", type = "text/javascript" },
     "app.js"                                            = { path = "${path.module}/../site/app.js", type = "text/javascript" },
