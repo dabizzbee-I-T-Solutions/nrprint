@@ -126,8 +126,8 @@ locals {
     "images/portfolio/hat-4.jpg" = { path = "${path.module}/../site/images/portfolio/hat-4.jpg", type = "image/jpeg" }
     "images/portfolio/hat-5.jpg" = { path = "${path.module}/../site/images/portfolio/hat-5.jpg", type = "image/jpeg" }
     "images/portfolio/hat-6.jpg" = { path = "${path.module}/../site/images/portfolio/hat-6.jpg", type = "image/jpeg" }
-    "images/portfolio/hat-7.jpg" = { path = "${path.module}/../site/images/portfolio/hat-7.jpg", type = "image/jpeg" }
-    "images/portfolio/hat-8.jpg" = { path = "${path.module}/../site/images/portfolio/hat-8.jpg", type = "image/jpeg" }
+    # "images/portfolio/hat-7.jpg" = { path = "${path.module}/../site/images/portfolio/hat-7.jpg", type = "image/jpeg" }
+    # "images/portfolio/hat-8.jpg" = { path = "${path.module}/../site/images/portfolio/hat-8.jpg", type = "image/jpeg" }
 
     # Mugs
     "images/portfolio/mug-1.jpg" = { path = "${path.module}/../site/images/portfolio/mug-1.jpg", type = "image/jpeg" }
