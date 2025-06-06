@@ -10,4 +10,7 @@ domain_name = "nrprinthk.com"
 
 acm_certificate_arn = "arn:aws:acm:us-east-1:206926705002:certificate/ff22a40c-80a8-48b3-846f-7ab7b707bd5b"
 
- 
+ tags = {
+   "environment" = "production"
+   "project"="nrprint"
+ }
