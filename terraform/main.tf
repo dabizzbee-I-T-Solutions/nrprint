@@ -71,33 +71,34 @@ resource "aws_s3_bucket_policy" "cloudfront_access_policy" {
 # ------------------------------------------------------------------------------
 locals {
   website_files = {
-    "style.css"                                 = { path = "${path.module}/../site/style.css", type = "text/css" },
-    "sketch.js"                                 = { path = "${path.module}/../site/sketch.js", type = "text/javascript" },
-    "slides.js"                                 = { path = "${path.module}/../site/slides.js", type = "text/javascript" },
-    "index.html"                                = { path = "${path.module}/../site/index.html", type = "text/html" },
-    "error.html"                                = { path = "${path.module}/../site/error.html", type = "text/html" },
-    "favicon/android-chrome-192x192.png"        = { path = "${path.module}/../site/favicon/android-chrome-192x192.png", type = "image/png" },
-    "favicon/android-chrome-512x512.png"        = { path = "${path.module}/../site/favicon/android-chrome-512x512.png", type = "image/png" },
-    "favicon/favicon.ico"                       = { path = "${path.module}/../site/favicon/favicon.ico", type = "image/x-icon" },
-    "favicon/apple-touch-icon.png"              = { path = "${path.module}/../site/favicon/apple-touch-icon.png", type = "image/png" },
-    "site.webmanifest"                          = { path = "${path.module}/../site/site.webmanifest", type = "application/manifest+json" },
-    "images/logo.png"                           = { path = "${path.module}/../site/images/logo.png", type = "image/png" },
-    "images/tshirt-sample1.jpg"                 = { path = "${path.module}/../site/images/tshirt-sample1.jpg", type = "image/jpeg" },
-    "images/mug-sample1.jpg"                    = { path = "${path.module}/../site/images/mug-sample1.jpg", type = "image/jpeg" },
-    "images/cap-sample1.jpg"                    = { path = "${path.module}/../site/images/cap-sample1.jpg", type = "image/jpeg" },
-    "images/tshirt-sample2.jpg"                 = { path = "${path.module}/../site/images/tshirt-sample2.jpg", type = "image/jpeg" },
-    "images/mug-sample2.jpg"                    = { path = "${path.module}/../site/images/mug-sample2.jpg", type = "image/jpeg" },
-    "images/cap-sample2.jpg"                    = { path = "${path.module}/../site/images/cap-sample2.jpg", type = "image/jpeg" },
-    "images/accomplishment-event-detail.jpg"    = { path = "${path.module}/../site/images/accomplishment-event-detail.jpg", type = "image/jpeg" },
-    "images/accomplishment-business-collab.jpg" = { path = "${path.module}/../site/images/accomplishment-business-collab.jpg", type = "image/jpeg" },
-    "images/accomplishment-volume.jpg"          = { path = "${path.module}/../site/images/accomplishment-volume.jpg", type = "image/jpeg" },
-    "images/accomplishment-mug-tech.jpg"        = { path = "${path.module}/../site/images/accomplishment-mug-tech.jpg", type = "image/jpeg" },
-    "images/nrprint-home-slideshow/slide1.jpg" = { path = "${path.module}/../site/images/nrprint-home-slideshow/slide1.jpg", type = "image/jpeg" },
-    "images/nrprint-home-slideshow/slide2.png" = { path = "${path.module}/../site/images/nrprint-home-slideshow/slide2.png", type = "image/png" },
+    "style.css"                                         = { path = "${path.module}/../site/style.css", type = "text/css" },
+    "sketch.js"                                         = { path = "${path.module}/../site/sketch.js", type = "text/javascript" },
+    "slides.js"                                         = { path = "${path.module}/../site/slides.js", type = "text/javascript" },
+    "app.js"                                            = { path = "${path.module}/../site/app.js", type = "text/javascript" },
+    "index.html"                                        = { path = "${path.module}/../site/index.html", type = "text/html" },
+    "error.html"                                        = { path = "${path.module}/../site/error.html", type = "text/html" },
+    "favicon/android-chrome-192x192.png"                = { path = "${path.module}/../site/favicon/android-chrome-192x192.png", type = "image/png" },
+    "favicon/android-chrome-512x512.png"                = { path = "${path.module}/../site/favicon/android-chrome-512x512.png", type = "image/png" },
+    "favicon/favicon.ico"                               = { path = "${path.module}/../site/favicon/favicon.ico", type = "image/x-icon" },
+    "favicon/apple-touch-icon.png"                      = { path = "${path.module}/../site/favicon/apple-touch-icon.png", type = "image/png" },
+    "site.webmanifest"                                  = { path = "${path.module}/../site/site.webmanifest", type = "application/manifest+json" },
+    "images/logo.png"                                   = { path = "${path.module}/../site/images/logo.png", type = "image/png" },
+    "images/tshirt-sample1.jpg"                         = { path = "${path.module}/../site/images/tshirt-sample1.jpg", type = "image/jpeg" },
+    "images/mug-sample1.jpg"                            = { path = "${path.module}/../site/images/mug-sample1.jpg", type = "image/jpeg" },
+    "images/cap-sample1.jpg"                            = { path = "${path.module}/../site/images/cap-sample1.jpg", type = "image/jpeg" },
+    "images/tshirt-sample2.jpg"                         = { path = "${path.module}/../site/images/tshirt-sample2.jpg", type = "image/jpeg" },
+    "images/mug-sample2.jpg"                            = { path = "${path.module}/../site/images/mug-sample2.jpg", type = "image/jpeg" },
+    "images/cap-sample2.jpg"                            = { path = "${path.module}/../site/images/cap-sample2.jpg", type = "image/jpeg" },
+    "images/accomplishment-event-detail.jpg"            = { path = "${path.module}/../site/images/accomplishment-event-detail.jpg", type = "image/jpeg" },
+    "images/accomplishment-business-collab.jpg"         = { path = "${path.module}/../site/images/accomplishment-business-collab.jpg", type = "image/jpeg" },
+    "images/accomplishment-volume.jpg"                  = { path = "${path.module}/../site/images/accomplishment-volume.jpg", type = "image/jpeg" },
+    "images/accomplishment-mug-tech.jpg"                = { path = "${path.module}/../site/images/accomplishment-mug-tech.jpg", type = "image/jpeg" },
+    "images/nrprint-home-slideshow/slide1.jpg"          = { path = "${path.module}/../site/images/nrprint-home-slideshow/slide1.jpg", type = "image/jpeg" },
+    "images/nrprint-home-slideshow/slide2.png"          = { path = "${path.module}/../site/images/nrprint-home-slideshow/slide2.png", type = "image/png" },
     "images/nrprint-home-slideshow/product-memory1.jpg" = { path = "${path.module}/../site/images/nrprint-home-slideshow/product-memory1.jpg", type = "image/jpeg" },
     "images/nrprint-home-slideshow/product-memory2.jpg" = { path = "${path.module}/../site/images/nrprint-home-slideshow/product-memory2.jpg", type = "image/jpeg" },
-    "images/nrprint-home-slideshow/another-one.png" = { path = "${path.module}/../site/images/nrprint-home-slideshow/another-one.png", type = "image/png" },
-    "images/nrprint-home-slideshow/tshirt-sample1.jpg" = { path = "${path.module}/../site/images/nrprint-home-slideshow/tshirt-sample1.jpg", type = "image/png" }
+    "images/nrprint-home-slideshow/another-one.png"     = { path = "${path.module}/../site/images/nrprint-home-slideshow/another-one.png", type = "image/png" },
+    "images/nrprint-home-slideshow/tshirt-sample1.jpg"  = { path = "${path.module}/../site/images/nrprint-home-slideshow/tshirt-sample1.jpg", type = "image/png" }
   }
 }
 
@@ -113,7 +114,7 @@ resource "aws_s3_object" "site_objects" {
     aws_s3_bucket_policy.cloudfront_access_policy
   ]
 }
- 
+
 
 # ------------------------------------------------------------------------------
 # CloudFront Distribution

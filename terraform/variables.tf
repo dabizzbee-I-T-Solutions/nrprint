@@ -7,7 +7,7 @@ variable "aws_region" {
 
 variable "bucket_name" {
   description = "The name of the S3 bucket for the website."
-  type        = string 
+  type        = string
 }
 
 variable "upload_role_arn" {
@@ -24,14 +24,14 @@ variable "domain_name" {
 
 variable "acm_certificate_arn" {
   description = "ARN of the ACM certificate for the custom domain. Ensure it's in us-east-1 for CloudFront."
-  type        = string 
+  type        = string
 }
 
 
 variable "tags" {
   description = "A map of tags to assign to resources."
   type        = map(string)
-  
+
 }
 
 variable "region" {
