@@ -21,6 +21,11 @@
     .main-nav ul li a::after { display: none; }
     .main-nav ul li:last-child a { border-bottom: none; }
     .main-nav ul li a i { display: inline-block; width: 24px; text-align: center; font-size: 1.1em; color: #3A7D44; }
+    .nav-toggle.is-active {
+    position: fixed; /* Position it relative to the viewport, not the header */
+    top: 22px;       /* Match the header's top padding */
+    right: 5%;       /* Position it from the right edge of the screen */
+}
     .header-socials { display: none; }
     .mobile-nav-socials {
     display: flex;
@@ -29,7 +34,7 @@
     text-align: center;
     margin-top: auto;
     padding-top: 20px;
-    padding-bottom: 100px; /* NEW, LARGER VALUE TO LIFT ICONS ABOVE FAB */
+    padding-bottom: 300px; /* NEW, LARGER VALUE TO LIFT ICONS ABOVE FAB */
     border-top: 1px solid #F4F1EE;
 }/* This rule controls the size of the circular "button" */
 .mobile-nav-socials a {
