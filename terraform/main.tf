@@ -71,36 +71,27 @@ resource "aws_s3_bucket_policy" "cloudfront_access_policy" {
 # ------------------------------------------------------------------------------
 locals {
   website_files = {
-    "style.css"                                         = { path = "${path.module}/../site/style.css", type = "text/css" },
-    "responsive.css"                                         = { path = "${path.module}/../site/responsive.css", type = "text/css" },
-    "sketch.js"                                         = { path = "${path.module}/../site/sketch.js", type = "text/javascript" },
-    "slides.js"                                         = { path = "${path.module}/../site/slides.js", type = "text/javascript" },
-    "app.js"                                            = { path = "${path.module}/../site/app.js", type = "text/javascript" },
-    "index.html"                                        = { path = "${path.module}/../site/index.html", type = "text/html" },
-    "error.html"                                        = { path = "${path.module}/../site/error.html", type = "text/html" },
-    "favicon/android-chrome-192x192.png"                = { path = "${path.module}/../site/favicon/android-chrome-192x192.png", type = "image/png" },
-    "favicon/android-chrome-512x512.png"                = { path = "${path.module}/../site/favicon/android-chrome-512x512.png", type = "image/png" },
-    "favicon/favicon.ico"                               = { path = "${path.module}/../site/favicon/favicon.ico", type = "image/x-icon" },
-    "favicon/apple-touch-icon.png"                      = { path = "${path.module}/../site/favicon/apple-touch-icon.png", type = "image/png" },
-    "site.webmanifest"                                  = { path = "${path.module}/../site/site.webmanifest", type = "application/manifest+json" },
-    "images/logo.png"                                   = { path = "${path.module}/../site/images/logo.png", type = "image/png" },
-    "images/tshirt-sample1.jpg"                         = { path = "${path.module}/../site/images/tshirt-sample1.jpg", type = "image/jpeg" },
-    "images/mug-sample1.jpg"                            = { path = "${path.module}/../site/images/mug-sample1.jpg", type = "image/jpeg" },
-    "images/cap-sample1.jpg"                            = { path = "${path.module}/../site/images/cap-sample1.jpg", type = "image/jpeg" },
-    "images/tshirt-sample2.jpg"                         = { path = "${path.module}/../site/images/tshirt-sample2.jpg", type = "image/jpeg" },
-    "images/mug-sample2.jpg"                            = { path = "${path.module}/../site/images/mug-sample2.jpg", type = "image/jpeg" },
-    "images/cap-sample2.jpg"                            = { path = "${path.module}/../site/images/cap-sample2.jpg", type = "image/jpeg" },
-    "images/accomplishment-event-detail.jpg"            = { path = "${path.module}/../site/images/accomplishment-event-detail.jpg", type = "image/jpeg" },
-    "images/accomplishment-business-collab.jpg"         = { path = "${path.module}/../site/images/accomplishment-business-collab.jpg", type = "image/jpeg" },
-    "images/accomplishment-volume.jpg"                  = { path = "${path.module}/../site/images/accomplishment-volume.jpg", type = "image/jpeg" },
-    "images/accomplishment-mug-tech.jpg"                = { path = "${path.module}/../site/images/accomplishment-mug-tech.jpg", type = "image/jpeg" },
-    "images/nrprint-home-slideshow/slide1.jpg"          = { path = "${path.module}/../site/images/nrprint-home-slideshow/slide1.jpg", type = "image/jpeg" },
-    "images/nrprint-home-slideshow/slide2.png"          = { path = "${path.module}/../site/images/nrprint-home-slideshow/slide2.png", type = "image/png" },
-    "images/nrprint-home-slideshow/product-memory1.jpg" = { path = "${path.module}/../site/images/nrprint-home-slideshow/product-memory1.jpg", type = "image/jpeg" },
-    "images/nrprint-home-slideshow/product-memory2.jpg" = { path = "${path.module}/../site/images/nrprint-home-slideshow/product-memory2.jpg", type = "image/jpeg" },
-    "images/nrprint-home-slideshow/another-one.png"     = { path = "${path.module}/../site/images/nrprint-home-slideshow/another-one.png", type = "image/png" },
-    "images/nrprint-home-slideshow/tshirt-sample1.jpg"  = { path = "${path.module}/../site/images/nrprint-home-slideshow/tshirt-sample1.jpg", type = "image/png" }
-    # T-Shirts
+    # Core Site Files
+    "index.html"                                        = { path = "${path.module}/../site/index.html", type = "text/html" }
+    "style.css"                                         = { path = "${path.module}/../site/style.css", type = "text/css" }
+    "responsive.css"                                    = { path = "${path.module}/../site/responsive.css", type = "text/css" }
+    "app.js"                                            = { path = "${path.module}/../site/app.js", type = "text/javascript" }
+    "slides.js"                                         = { path = "${path.module}/../site/slides.js", type = "text/javascript" }
+    "error.html"                                        = { path = "${path.module}/../site/error.html", type = "text/html" }
+    
+    # Favicon and Manifest
+    "favicon/android-chrome-192x192.png"                = { path = "${path.module}/../site/favicon/android-chrome-192x192.png", type = "image/png" }
+    "favicon/android-chrome-512x512.png"                = { path = "${path.module}/../site/favicon/android-chrome-512x512.png", type = "image/png" }
+    "favicon/favicon.ico"                               = { path = "${path.module}/../site/favicon/favicon.ico", type = "image/x-icon" }
+    "favicon/apple-touch-icon.png"                      = { path = "${path.module}/../site/favicon/apple-touch-icon.png", type = "image/png" }
+    "site.webmanifest"                                  = { path = "${path.module}/../site/site.webmanifest", type = "application/manifest+json" }
+    
+    # General Images used in HTML
+    "images/logo.png"                                   = { path = "${path.module}/../site/images/logo.png", type = "image/png" }
+    "images/tshirt-sample1.jpg"                         = { path = "${path.module}/../site/images/tshirt-sample1.jpg", type = "image/jpeg" }
+    "images/mug-sample1.jpg"                            = { path = "${path.module}/../site/images/mug-sample1.jpg", type = "image/jpeg" }
+
+    # Portfolio: T-Shirts
     "images/portfolio/tshirt-1.jpg" = { path = "${path.module}/../site/images/portfolio/tshirt-1.jpg", type = "image/jpeg" }
     "images/portfolio/tshirt-2.jpg" = { path = "${path.module}/../site/images/portfolio/tshirt-2.jpg", type = "image/jpeg" }
     "images/portfolio/tshirt-3.jpg" = { path = "${path.module}/../site/images/portfolio/tshirt-3.jpg", type = "image/jpeg" }
@@ -110,7 +101,7 @@ locals {
     "images/portfolio/tshirt-7.jpg" = { path = "${path.module}/../site/images/portfolio/tshirt-7.jpg", type = "image/jpeg" }
     "images/portfolio/tshirt-8.jpg" = { path = "${path.module}/../site/images/portfolio/tshirt-8.jpg", type = "image/jpeg" }
 
-    # Hoodies
+    # Portfolio: Hoodies
     "images/portfolio/hoodie-1.jpg" = { path = "${path.module}/../site/images/portfolio/hoodie-1.jpg", type = "image/jpeg" }
     "images/portfolio/hoodie-2.jpg" = { path = "${path.module}/../site/images/portfolio/hoodie-2.jpg", type = "image/jpeg" }
     "images/portfolio/hoodie-3.jpg" = { path = "${path.module}/../site/images/portfolio/hoodie-3.jpg", type = "image/jpeg" }
@@ -120,17 +111,15 @@ locals {
     "images/portfolio/hoodie-7.jpg" = { path = "${path.module}/../site/images/portfolio/hoodie-7.jpg", type = "image/jpeg" }
     "images/portfolio/hoodie-8.jpg" = { path = "${path.module}/../site/images/portfolio/hoodie-8.jpg", type = "image/jpeg" }
 
-    # Hats
+    # Portfolio: Hats
     "images/portfolio/hat-1.jpg" = { path = "${path.module}/../site/images/portfolio/hat-1.jpg", type = "image/jpeg" }
     "images/portfolio/hat-2.jpg" = { path = "${path.module}/../site/images/portfolio/hat-2.jpg", type = "image/jpeg" }
     "images/portfolio/hat-3.jpg" = { path = "${path.module}/../site/images/portfolio/hat-3.jpg", type = "image/jpeg" }
     "images/portfolio/hat-4.jpg" = { path = "${path.module}/../site/images/portfolio/hat-4.jpg", type = "image/jpeg" }
     "images/portfolio/hat-5.jpg" = { path = "${path.module}/../site/images/portfolio/hat-5.jpg", type = "image/jpeg" }
     "images/portfolio/hat-6.jpg" = { path = "${path.module}/../site/images/portfolio/hat-6.jpg", type = "image/jpeg" }
-    # "images/portfolio/hat-7.jpg" = { path = "${path.module}/../site/images/portfolio/hat-7.jpg", type = "image/jpeg" }
-    # "images/portfolio/hat-8.jpg" = { path = "${path.module}/../site/images/portfolio/hat-8.jpg", type = "image/jpeg" }
 
-    # Mugs
+    # Portfolio: Mugs
     "images/portfolio/mug-1.jpg" = { path = "${path.module}/../site/images/portfolio/mug-1.jpg", type = "image/jpeg" }
     "images/portfolio/mug-2.jpg" = { path = "${path.module}/../site/images/portfolio/mug-2.jpg", type = "image/jpeg" }
     "images/portfolio/mug-3.jpg" = { path = "${path.module}/../site/images/portfolio/mug-3.jpg", type = "image/jpeg" }
@@ -140,7 +129,7 @@ locals {
     "images/portfolio/mug-7.jpg" = { path = "${path.module}/../site/images/portfolio/mug-7.jpg", type = "image/jpeg" }
     "images/portfolio/mug-8.jpg" = { path = "${path.module}/../site/images/portfolio/mug-8.jpg", type = "image/jpeg" }
 
-    # Tumblers
+    # Portfolio: Tumblers
     "images/portfolio/tumbler-1.jpg" = { path = "${path.module}/../site/images/portfolio/tumbler-1.jpg", type = "image/jpeg" }
     "images/portfolio/tumbler-2.jpg" = { path = "${path.module}/../site/images/portfolio/tumbler-2.jpg", type = "image/jpeg" }
     "images/portfolio/tumbler-3.jpg" = { path = "${path.module}/../site/images/portfolio/tumbler-3.jpg", type = "image/jpeg" }
@@ -150,7 +139,7 @@ locals {
     "images/portfolio/tumbler-7.jpg" = { path = "${path.module}/../site/images/portfolio/tumbler-7.jpg", type = "image/jpeg" }
     "images/portfolio/tumbler-8.jpg" = { path = "${path.module}/../site/images/portfolio/tumbler-8.jpg", type = "image/jpeg" }
 
-    # Tote Bags
+    # Portfolio: Tote Bags
     "images/portfolio/tote-1.jpg" = { path = "${path.module}/../site/images/portfolio/tote-1.jpg", type = "image/jpeg" }
     "images/portfolio/tote-2.jpg" = { path = "${path.module}/../site/images/portfolio/tote-2.jpg", type = "image/jpeg" }
     "images/portfolio/tote-3.jpg" = { path = "${path.module}/../site/images/portfolio/tote-3.jpg", type = "image/jpeg" }
