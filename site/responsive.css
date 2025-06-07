@@ -16,12 +16,43 @@
     .main-nav { display: none; flex-direction: column; position: fixed; top: 0; right: -300px; width: 280px; height: 100vh; background-color: #FFFFFF; box-shadow: -2px 0 10px rgba(0,0,0, 0.15); z-index: 1050; transition: right 0.3s ease-in-out; overflow-y: auto; }
     .main-nav.nav-open { display: flex; right: 0; }
     .main-nav ul { flex-direction: column; width: 100%; padding: 0; margin-top: 1em; }
-    .main-nav ul li a { display: block; padding: 0.9em 1.5em; text-align: left; border-bottom: 1px solid #F4F1EE; color: #8B5E3C; font-size: 1.05em; }
+    .main-nav ul li a { display: flex; align-items: center; gap: 15px; padding: 0.9em 1.5em; text-align: left; border-bottom: 1px solid #F4F1EE; color: #8B5E3C; font-size: 1.05em; }
     .main-nav ul li a:hover { background-color: #F4F1EE; color: #3A7D44; text-decoration: none; }
     .main-nav ul li a::after { display: none; }
     .main-nav ul li:last-child a { border-bottom: none; }
+    .main-nav ul li a i { display: inline-block; width: 24px; text-align: center; font-size: 1.1em; color: #3A7D44; }
     .header-socials { display: none; }
-    .mobile-nav-socials { display: flex; justify-content: center; gap: 15px; text-align: center; margin-top: auto; padding: 20px 0; border-top: 1px solid #F4F1EE; }
+    .mobile-nav-socials {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    text-align: center;
+    margin-top: auto;
+    padding-top: 20px;
+    padding-bottom: 100px; /* NEW, LARGER VALUE TO LIFT ICONS ABOVE FAB */
+    border-top: 1px solid #F4F1EE;
+}/* This rule controls the size of the circular "button" */
+.mobile-nav-socials a {
+    color: #8B5E3C;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+    border-radius: 50%;
+    width: 44px;  /* <-- INCREASE THIS to make the circle bigger (e.g., from 36px to 44px) */
+    height: 44px; /* <-- INCREASE THIS to make the circle bigger (e.g., from 36px to 44px) */
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* This new rule controls the size of the icon itself */
+.mobile-nav-socials i {
+    font-size: 1.5em; /* <-- INCREASE THIS to make the icon bigger (e.g., from 1.2em to 1.5em) */
+}
+
+.mobile-nav-socials a:hover {
+    color: #3A7D44;
+    background-color: #F4F1EE;
+}
     
     /* General Mobile Layout */
     h1 { font-size: 2em; } h2 { font-size: 1.7em; } h3 { font-size: 1.3em; }
@@ -60,8 +91,8 @@
     .fab-container.open .fab-main .fa-xmark { transform: translateY(0); opacity: 1; }
     .fab-options { display: flex; flex-direction: column; gap: 15px; margin-bottom: 20px; transform: scale(0); transform-origin: bottom right; transition: transform 0.3s ease; }
     .fab-container.open .fab-options { transform: scale(1); }
-    .fab-link { width: 50px; height: 50px; border-radius: 50%; color: white; display: flex; justify-content: center;align-items: center;  align-items: center; box-shadow: 0 3px 8px rgba(0,0,0,0.15); text-decoration: none; font-size: 24px; }
-    .fab-link i {  font-size: 24px;  line-height: 1;}
+    .fab-link { width: 50px; height: 50px; border-radius: 50%; color: white; display: flex; justify-content: center; align-items: center; box-shadow: 0 3px 8px rgba(0,0,0,0.15); text-decoration: none; font-size: 24px; }
+    .fab-link i { line-height: 1; }
     .fab-link.messenger { background-color: #0084FF; }
     .fab-link.whatsapp { background-color: #25D366; }
 }
@@ -76,4 +107,4 @@
     .main-nav { width: 250px; right: -270px; }
     .client-grid { grid-template-columns: repeat(2, 1fr); }
     .icon-list li { align-items: center; }
-} 
+}
