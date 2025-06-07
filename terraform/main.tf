@@ -72,24 +72,25 @@ resource "aws_s3_bucket_policy" "cloudfront_access_policy" {
 locals {
   website_files = {
     # Core Site Files
-    "index.html"                                        = { path = "${path.module}/../site/index.html", type = "text/html" }
-    "style.css"                                         = { path = "${path.module}/../site/style.css", type = "text/css" }
-    "responsive.css"                                    = { path = "${path.module}/../site/responsive.css", type = "text/css" }
-    "app.js"                                            = { path = "${path.module}/../site/app.js", type = "text/javascript" }
-    "slides.js"                                         = { path = "${path.module}/../site/slides.js", type = "text/javascript" }
-    "error.html"                                        = { path = "${path.module}/../site/error.html", type = "text/html" }
-    
+    "index.html"     = { path = "${path.module}/../site/index.html", type = "text/html" }
+    "style.css"      = { path = "${path.module}/../site/style.css", type = "text/css" }
+    "responsive.css" = { path = "${path.module}/../site/responsive.css", type = "text/css" }
+    "app.js"         = { path = "${path.module}/../site/app.js", type = "text/javascript" }
+    "slides.js"      = { path = "${path.module}/../site/slides.js", type = "text/javascript" }
+    "vines.js"       = { path = "${path.module}/../site/vines.js", type = "text/javascript" }
+    "error.html"     = { path = "${path.module}/../site/error.html", type = "text/html" }
+
     # Favicon and Manifest
-    "favicon/android-chrome-192x192.png"                = { path = "${path.module}/../site/favicon/android-chrome-192x192.png", type = "image/png" }
-    "favicon/android-chrome-512x512.png"                = { path = "${path.module}/../site/favicon/android-chrome-512x512.png", type = "image/png" }
-    "favicon/favicon.ico"                               = { path = "${path.module}/../site/favicon/favicon.ico", type = "image/x-icon" }
-    "favicon/apple-touch-icon.png"                      = { path = "${path.module}/../site/favicon/apple-touch-icon.png", type = "image/png" }
-    "site.webmanifest"                                  = { path = "${path.module}/../site/site.webmanifest", type = "application/manifest+json" }
-    
+    "favicon/android-chrome-192x192.png" = { path = "${path.module}/../site/favicon/android-chrome-192x192.png", type = "image/png" }
+    "favicon/android-chrome-512x512.png" = { path = "${path.module}/../site/favicon/android-chrome-512x512.png", type = "image/png" }
+    "favicon/favicon.ico"                = { path = "${path.module}/../site/favicon/favicon.ico", type = "image/x-icon" }
+    "favicon/apple-touch-icon.png"       = { path = "${path.module}/../site/favicon/apple-touch-icon.png", type = "image/png" }
+    "site.webmanifest"                   = { path = "${path.module}/../site/site.webmanifest", type = "application/manifest+json" }
+
     # General Images used in HTML
-    "images/logo.png"                                   = { path = "${path.module}/../site/images/logo.png", type = "image/png" }
-    "images/tshirt-sample1.jpg"                         = { path = "${path.module}/../site/images/tshirt-sample1.jpg", type = "image/jpeg" }
-    "images/mug-sample1.jpg"                            = { path = "${path.module}/../site/images/mug-sample1.jpg", type = "image/jpeg" }
+    "images/logo.png"           = { path = "${path.module}/../site/images/logo.png", type = "image/png" }
+    "images/tshirt-sample1.jpg" = { path = "${path.module}/../site/images/tshirt-sample1.jpg", type = "image/jpeg" }
+    "images/mug-sample1.jpg"    = { path = "${path.module}/../site/images/mug-sample1.jpg", type = "image/jpeg" }
 
     # Portfolio: T-Shirts
     "images/portfolio/tshirt-1.jpg" = { path = "${path.module}/../site/images/portfolio/tshirt-1.jpg", type = "image/jpeg" }
