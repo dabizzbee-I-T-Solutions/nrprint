@@ -145,3 +145,20 @@ footer a:hover { color: #e9e6e3; }
 
 /* FAB (Hidden on desktop) */
 .fab-container { display: none; }
+/* === FOOTER CREDIT LINK === */
+.credit-link {
+    font-size: 0.85em; /* Make it smaller than the other text */
+    opacity: 0.8;      /* Make it slightly transparent to be less prominent */
+    margin-top: 15px;  /* Add space between it and the copyright line */
+}
+
+/* Style the link inside the credit text */
+.credit-link a {
+    color: #F4F1EE; /* Use the same color as the surrounding footer text */
+    text-decoration: underline; /* A subtle underline clearly shows it's a link */
+}
+
+/* A simple hover effect */
+.credit-link a:hover {
+    color: #FFFFFF; /* Brightens to pure white on hover */
+} 
