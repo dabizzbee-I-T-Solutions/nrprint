@@ -162,8 +162,8 @@ footer a:hover { color: #e9e6e3; }
 
 /* === P5.JS VINE ANIMATION STYLES === */
 .philosophy-box {
-    position: relative; /* This is crucial for positioning the canvas inside */
-    overflow: hidden;   /* Keeps the vines from drawing outside the box */
+    position: relative;
+    overflow: hidden;
 }
 
 #p5-canvas-container {
@@ -172,10 +172,10 @@ footer a:hover { color: #e9e6e3; }
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 0; /* Ensures it is behind the text content */
+    z-index: 0;
+    pointer-events: none; /* Prevent canvas from blocking text selection */
 }
 
-/* Make sure the text content is on top of the canvas */
 .philosophy-box h3,
 .philosophy-box p {
     position: relative;

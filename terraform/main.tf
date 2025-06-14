@@ -5,7 +5,7 @@ data "aws_caller_identity" "current" {}
 # ------------------------------------------------------------------------------
 resource "aws_s3_bucket" "website_bucket" {
   bucket        = var.bucket_name
-  force_destroy = true # Be careful with this in production
+  force_destroy = true
   tags          = merge(var.tags, { Name = var.bucket_name })
 }
 
@@ -13,14 +13,14 @@ resource "aws_s3_bucket_public_access_block" "block_public" {
   bucket                  = aws_s3_bucket.website_bucket.id
   block_public_acls       = true
   block_public_policy     = true
-  ignore_public_acls      = true # ACLs are disabled by BucketOwnerEnforced
+  ignore_public_acls      = true
   restrict_public_buckets = true
 }
 
 resource "aws_s3_bucket_ownership_controls" "website_bucket_ownership" {
   bucket = aws_s3_bucket.website_bucket.id
   rule {
-    object_ownership = "BucketOwnerEnforced" # ACLs disabled, bucket owner owns all objects
+    object_ownership = "BucketOwnerEnforced"
   }
   depends_on = [aws_s3_bucket_public_access_block.block_public]
 }
@@ -55,7 +55,7 @@ resource "aws_s3_bucket_policy" "cloudfront_access_policy" {
         Principal = {
           AWS = var.upload_role_arn != "" ? var.upload_role_arn : "arn:aws:iam::${data.aws_caller_identity.current.account_id}:user/alfie.opo"
         }
-        Action   = ["s3:PutObject"] # s3:PutObjectAcl not strictly needed with BucketOwnerEnforced if uploader doesn't try to set ACLs
+        Action   = ["s3:PutObject"]
         Resource = "${aws_s3_bucket.website_bucket.arn}/*"
       }
     ]
@@ -186,7 +186,6 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
 
   aliases = [var.domain_name]
 
-  # logging_config {} # REMOVED: Logging configuration block
 
   default_cache_behavior {
     allowed_methods  = ["GET", "HEAD", "OPTIONS"]
@@ -236,7 +235,6 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
   tags = merge(var.tags, { Name = "${var.domain_name}-cloudfront" })
 
   depends_on = [
-    # aws_s3_bucket.cloudfront_logs, # No longer needed
     aws_cloudfront_origin_access_identity.oai,
     aws_s3_bucket_ownership_controls.website_bucket_ownership
   ]

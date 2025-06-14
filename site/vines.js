@@ -20,11 +20,17 @@ function setup() {
   canvas.style('left', '0');
   canvas.style('z-index', '0');
 
-  // --- NEW: SCROLL-BASED CONTROL ---
-  // We no longer need mouse events.
-  // Add a scroll listener to the window.
-  window.addEventListener('scroll', calculateGrowthTarget);
-  // Call it once at the start to set the initial state.
+  // --- SCROLL-BASED CONTROL WITH THROTTLING ---
+  let scrollTimeout;
+  const handleScroll = () => {
+    if (scrollTimeout) return;
+    scrollTimeout = setTimeout(() => {
+      calculateGrowthTarget();
+      scrollTimeout = null;
+    }, 16); // ~60fps throttling
+  };
+  
+  window.addEventListener('scroll', handleScroll, { passive: true });
   calculateGrowthTarget();
 
   // Initialize the vines once.

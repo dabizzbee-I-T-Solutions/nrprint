@@ -105,6 +105,34 @@ document.addEventListener('DOMContentLoaded', function () {
             fabContainer.classList.toggle('open');
         });
     }
-    // ==========================================
- 
+    // Close mobile nav when clicking on nav links
+    const navLinks = document.querySelectorAll('.main-nav a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (mainNav.classList.contains('nav-open')) {
+                navToggle.classList.remove('is-active');
+                mainNav.classList.remove('nav-open');
+                body.classList.remove('no-scroll');
+            }
+        });
+    });
+
+    // Close mobile nav when clicking outside
+    document.addEventListener('click', (e) => {
+        if (mainNav.classList.contains('nav-open') && 
+            !mainNav.contains(e.target) && 
+            !navToggle.contains(e.target)) {
+            navToggle.classList.remove('is-active');
+            mainNav.classList.remove('nav-open');
+            body.classList.remove('no-scroll');
+        }
+    });
+
+    // ==================================================
+    // === CURRENT YEAR UPDATE ===
+    // ==================================================
+    const currentYearElement = document.getElementById('currentYear');
+    if (currentYearElement) {
+        currentYearElement.textContent = new Date().getFullYear();
+    }
 });
